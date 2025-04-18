@@ -1,26 +1,14 @@
 // // import { defineConfig } from "drizzle-kit";
-// /** @type { import("deizzle-kit").Config} */
-// export default ({
-//   dialect: "postgresql",
-//   schema: "./utils/schema.js",
-// //   out: "./drizzle",
-// dbCredentials: {
-//     url: process.env.NEXT_PUBLIC_DRIZZLE_DB_URL,
-// }
-// });
-import "dotenv/config";
-
-import { defineConfig } from "drizzle-kit";
-
-console.log('database url shows', process.env.DRIZZLE_DB_URL)
- 
-export default defineConfig({
+/** @type { import("drizzle-kit").Config} */
+export default ({
+  dialect: "postgresql",
   schema: "./utils/schema.js",
-  out: "./drizzle",
-  dialect: 'postgresql',
-  dbCredentials: {
-    url: process.env.DRIZZLE_DB_URL,
-  }
+dbCredentials: {
+    url: 'postgresql://ai-interview_owner:npg_wNmG2Ir1TfxL@ep-purple-butterfly-a8m3k3dl-pooler.eastus2.azure.neon.tech/ai-interview?sslmode=require',
+}
 });
+
+
+
 
 

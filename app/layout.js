@@ -5,6 +5,7 @@ import {
 } from '@clerk/nextjs'
 import { neobrutalism } from '@clerk/themes'
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -20,17 +21,28 @@ export const metadata = {
   description: "Take interview with help of AI",
 };
 
+
 export default function RootLayout({ children }) {
+
+
+
+
+
   return (
-    <ClerkProvider 
-    appearance={{
-      baseTheme: neobrutalism,
-    }}>
+    <ClerkProvider
+      appearance={{
+        baseTheme: neobrutalism,
+      }}>
       <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          {children}
+          
+
+            {children}
+          
+
+
         </body>
       </html>
     </ClerkProvider>
