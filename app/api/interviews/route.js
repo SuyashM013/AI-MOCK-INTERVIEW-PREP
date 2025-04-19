@@ -7,6 +7,7 @@ import userModel from '@/models/SchemaDB';
 
 
 export async function POST(req) {
+
     
     try {
         console.log("Connecting to DB...");

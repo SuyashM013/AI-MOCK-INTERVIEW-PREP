@@ -9,7 +9,6 @@ import {
   Clock,
   MessageSquare,
   Video,
-  Zap,
   CheckCircle,
   ArrowRight,
   ArrowDown,

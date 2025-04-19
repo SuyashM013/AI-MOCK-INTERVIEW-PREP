@@ -1,5 +1,5 @@
 'use client'
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
 
 import {
     Dialog,
@@ -70,6 +70,7 @@ function AddnewInterview() {
 
             // if(resp){
             //     setOpenDialog(false);
+            //     router.push('/dashboard/interview/'+resp[0]?.mockId);
 
             // }
 
@@ -83,21 +84,29 @@ function AddnewInterview() {
                     jobDesc,
                     jobExp,
                     userEmail: user?.primaryEmailAddress?.emailAddress,
-                  }),
+                }),
 
             })
 
-            if(!resp_mongo.ok){
+            const data = await resp_mongo.json();
+
+            if (resp_mongo) {
+                setOpenDialog(false);
+                router.push('/dashboard/Interview/'+data.mockId);
+
+            }
+
+
+            if (!resp_mongo.ok) {
                 const error = await resp_mongo.text();
                 console.log("Server Retruned Eror: ", error)
                 return;
             }
 
-            const data = await resp_mongo.json();
-            if(data.success){
+            if (data.success) {
                 console.log('Inserted Id: ', data.mockId);
             }
-            else{
+            else {
                 console.log('Error: ', data.error);
             }
 
