@@ -25,9 +25,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
 
 
-
-
-
   return (
     <ClerkProvider
       appearance={{
@@ -38,11 +35,8 @@ export default function RootLayout({ children }) {
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           
-
             {children}
-          
-
-
+        
         </body>
       </html>
     </ClerkProvider>

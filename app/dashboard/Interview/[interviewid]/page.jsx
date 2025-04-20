@@ -28,7 +28,7 @@ function Interview({ params }) {
 
       setInterviewData(mongo_res.data);
 
-      console.log(mongo_res.data)
+      console.log(mongo_res)
       
     } catch (e) {
       console.log('Error Fetching Interview : ', e.message);
@@ -42,10 +42,8 @@ function Interview({ params }) {
     
   }, [])
 
-
   if (error) return <div className="text-red-500">Error: {error}</div>;
   if (!interviewData) return <div>Loading...</div>;
-
 
 
   return (

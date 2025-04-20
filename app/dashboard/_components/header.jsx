@@ -15,9 +15,10 @@ const Header = () => {
   // }, [])
 
   return (
-    <nav className="bg-secondary rounded-full my-2 max-w-7xl shadow-lg mx-auto">
-      <div className="max-w-6xl mx-auto px-4">
+    <nav className="bg-secondary mx-5 my-5 rounded-3xl sm:rounded-full max-w-7xl shadow-lg md:mx-auto">
+      <div className="max-w-6xl mx-auto px-5">
         <div className="flex justify-between items-center h-16">
+
           {/* Logo */}
           <div className="flex-shrink-0">
             <Image

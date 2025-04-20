@@ -1,6 +1,10 @@
-import { SignIn } from '@clerk/nextjs'
+
+import { SignIn  } from '@clerk/nextjs'
+
 
 export default function Page() {
+
+    
     return (
 
 
@@ -31,7 +35,7 @@ export default function Page() {
                         </a>
 
                         <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-                        Welcome to AI Interview Prep App
+                            Welcome to AI Interview Prep App
                         </h2>
 
                         <p className="mt-4 leading-relaxed text-white/90">
@@ -45,7 +49,7 @@ export default function Page() {
                     className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
                 >
                     <div className="max-w-xl lg:max-w-3xl flex flex-col items-center">
-                        <div className="relative -mt-16 block lg:hidden">
+                        <div className="relative -mt-16 block  lg:hidden">
                             <a
                                 className="inline-flex size-16 items-center justify-center rounded-full bg-white text-blue-600 sm:size-20"
                                 href="#"
@@ -69,14 +73,13 @@ export default function Page() {
                             </h1>
 
                             <p className="mt-4 mb-5 leading-relaxed text-gray-500">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam dolorum aliquam,
-                                quibusdam aperiam voluptatum.
+                                Welcome to conquist your interview with our AI Interview Prep App. Our app is designed to help you prepare for interviews and make the most of your time.
                             </p>
                         </div>
-                        
-                        <div className='m-auto '>
 
-                            <SignIn />
+                        <div className='m-auto flex flex-col justify-center min-h-full '>
+
+                            <SignIn  />
                         </div>
 
                     </div>
