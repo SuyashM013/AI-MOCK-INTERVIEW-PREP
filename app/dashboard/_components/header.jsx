@@ -15,7 +15,7 @@ const Header = () => {
   // }, [])
 
   return (
-    <nav className="bg-secondary mx-5 my-5 rounded-3xl sm:rounded-full max-w-7xl shadow-lg md:mx-auto">
+    <nav className="bg-primary/20 mx-5 my-5 rounded-3xl sm:rounded-full lg:max-w-screen-xl shadow-lg md:mx-auto md:max-w-4xl ">
       <div className="max-w-6xl mx-auto px-5">
         <div className="flex justify-between items-center h-16">
 
@@ -45,7 +45,7 @@ const Header = () => {
               ${path == '/dashboard/upgrade' && 'text-primary font-bold'}`}>Upgrade</Link>
 
             <Link href="/dashboard/how" className={` hover:text-primary
-              ${path == '/dashboard/how' && 'text-primary font-bold'}`}>How it Works?</Link>
+              ${path == '/dashboard/how' && 'text-primary font-bold'}`}>Resume</Link>
 
           </div>
 
@@ -102,7 +102,7 @@ const Header = () => {
                 className={`block px-3 py-2   hover:text-primary  rounded-md
                   ${path == '/dashboard/how' && 'text-primary font-bold'}`}
               >
-                How it Works?
+                Resume
               </Link>
             </div>
           </div>
