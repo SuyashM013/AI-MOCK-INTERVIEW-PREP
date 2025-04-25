@@ -1,7 +1,3 @@
-// See https://developers.google.com/apps-script/guides/properties
-// for instructions on how to set the API key.
-// const apiKey = PropertiesService.getScriptProperties().getProperty('NEXT_PUBLIC_API_KEY');
-
 const {
   GoogleGenerativeAI,
 
@@ -20,20 +16,11 @@ const model = genAI.getGenerativeModel({
     topP: 0.95,
     topK: 40,
     maxOutputTokens: 8192,
-    responseMimeType: 'text/plain',
+    responseMimeType: 'application/json',
   };
-
-  // const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-  // const options = {
-  //   method: 'POST',
-  //   contentType: 'application/json',
-  //   payload: JSON.stringify(data)
-  // };
 
 
   export const chatSession = model.startChat({
     generationConfig,
   })
 
-  // const response = UrlFetchApp.fetch(url, options);
-  // console.log(response.getContentText());

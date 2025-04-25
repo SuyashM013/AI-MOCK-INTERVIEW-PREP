@@ -8,12 +8,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 
- function Interview({ params }) {
+function Interview({ params }) {
 
   const { interviewid } = React.use(params);
 
   const [interviewData, setInterviewData] = useState();
-  const [MockInterviewQuestion, setMockInterviewQuestion] = useState();
   const [error, setError] = useState();
   const [webCamon, setWebCam] = useState(false);
 
@@ -21,12 +20,10 @@ import Link from "next/link";
     GetInterviewDetails();
   }, [])
 
-
   // Used to fetch interview details from mongo db
   const GetInterviewDetails = async () => {
 
     // const result = await db.select().from(MockInterview).where(eq(MockInterview.mockId, params.interviewId))
-
 
     try {
       const res = await fetch('/api/fetchdetails', {
@@ -41,18 +38,14 @@ import Link from "next/link";
         return new Error(mongo_res.error || "Unkown Error");
       }
 
-      const jsonMockresp = JSON.parse(mongo_res.data.jsonMockResp)
-      console.log(jsonMockresp)
-      setMockInterviewQuestion(jsonMockresp);
+      // const jsonMockresp = JSON.parse(mongo_res.data.jsonMockResp)
+      // console.log(jsonMockresp)
       setInterviewData(mongo_res.data);
-
-      // console.log(mongo_res)
 
     } catch (e) {
       console.log('Error Fetching Interview : ', e.message);
-      setError(e.messgae)
+      // setError(e.messgae)
     }
-
   }
 
 
@@ -113,9 +106,8 @@ import Link from "next/link";
 
       </div >
       <div className="flex mt-10 justify-end items-end">
-        <Link href={`/dashboard/interview/${interviewid}/Start`}>
-        <Button className> Start Interview</Button>
-        
+        <Link href={'/dashboard/Interview/'+interviewid+'/start'}>
+          <Button> Start Interview</Button>
         </Link>
 
       </div>
