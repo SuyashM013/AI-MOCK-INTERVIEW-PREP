@@ -20,14 +20,19 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
 
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Image
+          <div className="flex flex-shrink-0 gap-3 items-center">
+            <span>
+              <Image
               src="/logo.svg"
               alt="Logo"
               width={30}
               height={40}
               className="cursor-pointer"
             />
+
+              </span>
+            <span className='font-bold text-md'>  AI Interviewer </span>
+
           </div>
 
           {/* Desktop Menu */}

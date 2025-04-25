@@ -5,9 +5,12 @@ import Webcam from "react-webcam";
 import React, { useEffect, useState } from 'react'
 import { Lightbulb, WebcamIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 
-function Interview({ params }) {
+ function Interview({ params }) {
+
+  const { interviewid } = React.use(params);
 
   const [interviewData, setInterviewData] = useState();
   const [MockInterviewQuestion, setMockInterviewQuestion] = useState();
@@ -21,13 +24,15 @@ function Interview({ params }) {
 
   // Used to fetch interview details from mongo db
   const GetInterviewDetails = async () => {
+
     // const result = await db.select().from(MockInterview).where(eq(MockInterview.mockId, params.interviewId))
+
 
     try {
       const res = await fetch('/api/fetchdetails', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mockId: params.interviewid })
+        body: JSON.stringify({ mockId: interviewid })
       })
 
       const mongo_res = await res.json();
@@ -104,12 +109,14 @@ function Interview({ params }) {
 
             </>
           }
-
         </div>
 
       </div >
       <div className="flex mt-10 justify-end items-end">
+        <Link href={`/dashboard/interview/${interviewid}/Start`}>
         <Button className> Start Interview</Button>
+        
+        </Link>
 
       </div>
 

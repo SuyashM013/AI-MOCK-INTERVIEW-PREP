@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "AI Interview",
+  title: "AI Interviewer",
   description: "Take interview with help of AI",
 };
 
