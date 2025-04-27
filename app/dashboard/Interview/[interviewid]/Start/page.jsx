@@ -31,8 +31,10 @@ function page({params}) {
       }
 
       const jsonMockresp = JSON.parse(mongo_res.data.jsonMockResp)
-      console.log(jsonMockresp)
-      setMockInterviewQuestion(jsonMockresp);
+      console.log(jsonMockresp.
+        interviewQuestions
+        )
+      setMockInterviewQuestion(jsonMockresp.interviewQuestions);
       setInterviewData(mongo_res.data);
       
 
