@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import QuestionsSection from './_components/QuestionsSection';
+import RecordAns from './_components/RecordAns';
 
 function page({params}) {
 
@@ -9,6 +10,7 @@ function page({params}) {
 
   const [interviewData, setInterviewData] = useState();
   const [MockInterviewQuestion, setMockInterviewQuestion] = useState();
+  const [activeQuestion, setActiveQuestion] = useState(0);
 
   useEffect(() => {
     GetInterviewDetails();
@@ -47,9 +49,9 @@ function page({params}) {
   return (
     <div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
         {/* Questions */}
-        <QuestionsSection MockInterviewQuestion={MockInterviewQuestion} />
+        <QuestionsSection MockInterviewQuestion={MockInterviewQuestion} activeQuestion={activeQuestion} />
 
         {/* <h1>Questions are: </h1>
         <div>
@@ -65,7 +67,7 @@ function page({params}) {
 
 
         {/* Video/ voice recording */}
-        <div>audio</div>
+        <RecordAns />
 
       </div>
 
