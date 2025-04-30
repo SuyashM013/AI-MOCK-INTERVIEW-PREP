@@ -4,6 +4,7 @@ import {
   ClerkProvider
 } from '@clerk/nextjs'
 import { neobrutalism } from '@clerk/themes'
+import { Toaster } from "@/components/ui/toaster";
 
 
 const geistSans = Geist({
@@ -34,6 +35,8 @@ export default function RootLayout({ children }) {
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+
+          <Toaster />
           
             {children}
         

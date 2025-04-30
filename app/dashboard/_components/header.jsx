@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,12 +10,10 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const path = usePathname();
 
-  // useEffect(() => {
-  //   console.log(path)
-  // }, [])
-
+  
   return (
-    <nav className="bg-primary/20 mx-5 my-5 rounded-3xl sm:rounded-full lg:max-w-screen-xl shadow-lg md:mx-auto md:max-w-4xl ">
+    
+    <nav className="bg-primary/20 mx-5 my-5 rounded-3xl md:rounded-full  lg:max-w-screen-xl shadow-lg md:mx-auto md:max-w-4xl ">
       <div className="max-w-6xl mx-auto px-5">
         <div className="flex justify-between items-center h-16">
 
@@ -46,11 +44,11 @@ const Header = () => {
             <Link href="/dashboard/questions" className={` hover:text-primary
               ${path == '/dashboard/questions' && 'text-primary font-bold'}`}>Questions</Link>
 
-            <Link href="/dashboard/upgrade" className={` hover:text-primary
-              ${path == '/dashboard/upgrade' && 'text-primary font-bold'}`}>Upgrade</Link>
+            <Link href="/dashboard/Upgrade" className={` hover:text-primary
+              ${path == '/dashboard/Upgrade' && 'text-primary font-bold'}`}>Upgrade</Link>
 
-            <Link href="/dashboard/how" className={` hover:text-primary
-              ${path == '/dashboard/how' && 'text-primary font-bold'}`}>Resume</Link>
+            <Link href="/dashboard/Resume" className={` hover:text-primary
+              ${path == '/Resume' && 'text-primary font-bold'}`}>Resume</Link>
 
           </div>
 
@@ -96,16 +94,16 @@ const Header = () => {
                 Questions
               </Link>
               <Link
-                href="/dashboard/upgrade"
+                href="/dashboard/Upgrade"
                 className={`block px-3 py-2   hover:text-primary  rounded-md
-                  ${path == '/dashboard/upgrade' && 'text-primary font-bold'}`}
+                  ${path == '/dashboard/Upgrade' && 'text-primary font-bold'}`}
               >
                 Upgrade
               </Link>
               <Link
-                href="/dashboard/how"
+                href="/dashboard/Resume"
                 className={`block px-3 py-2   hover:text-primary  rounded-md
-                  ${path == '/dashboard/how' && 'text-primary font-bold'}`}
+                  ${path == '/Resume' && 'text-primary font-bold'}`}
               >
                 Resume
               </Link>

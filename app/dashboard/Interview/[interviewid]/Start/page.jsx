@@ -10,7 +10,7 @@ function page({params}) {
 
   const [interviewData, setInterviewData] = useState();
   const [MockInterviewQuestion, setMockInterviewQuestion] = useState();
-  const [activeQuestion, setActiveQuestion] = useState(0);
+  const [activeQuestion, setActiveQuestion] = useState(1);
 
   useEffect(() => {
     GetInterviewDetails();
@@ -33,10 +33,8 @@ function page({params}) {
       }
 
       const jsonMockresp = JSON.parse(mongo_res.data.jsonMockResp)
-      console.log(jsonMockresp.
-        interviewQuestions
-        )
-      setMockInterviewQuestion(jsonMockresp.interviewQuestions);
+      console.log(jsonMockresp)
+      setMockInterviewQuestion(jsonMockresp);
       setInterviewData(mongo_res.data);
       
 
@@ -49,25 +47,13 @@ function page({params}) {
   return (
     <div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-10 '>
+        
         {/* Questions */}
         <QuestionsSection MockInterviewQuestion={MockInterviewQuestion} activeQuestion={activeQuestion} />
 
-        {/* <h1>Questions are: </h1>
-        <div>
-          {MockInterviewQuestion&&MockInterviewQuestion.map((question,index) => {
-            return <h2 className='p-2 bg-secondary rounded-full text-xs md:text-sm text-center cursor-pointer'>Question #{index+1}</h2>
-
-          })}
-        </div> */}
-
-
-
-
-
-
         {/* Video/ voice recording */}
-        <RecordAns />
+        <RecordAns MockInterviewQuestion={MockInterviewQuestion} activeQuestion={activeQuestion} interviewData={interviewData}/>
 
       </div>
 
