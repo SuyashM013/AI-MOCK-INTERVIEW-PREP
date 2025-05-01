@@ -3,18 +3,19 @@
 import React, { useEffect, useState } from 'react'
 import QuestionsSection from './_components/QuestionsSection';
 import RecordAns from './_components/RecordAns';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
-function page({params}) {
+function page({ params }) {
 
   const { interviewid } = React.use(params);
 
   const [interviewData, setInterviewData] = useState();
   const [MockInterviewQuestion, setMockInterviewQuestion] = useState();
-  const [activeQuestion, setActiveQuestion] = useState(1);
+  const [activeQuestion, setActiveQuestion] = useState(0);
 
   useEffect(() => {
     GetInterviewDetails();
-
   }, [])
 
   const GetInterviewDetails = async () => {
@@ -35,8 +36,9 @@ function page({params}) {
       const jsonMockresp = JSON.parse(mongo_res.data.jsonMockResp)
       console.log(jsonMockresp)
       setMockInterviewQuestion(jsonMockresp);
-      setInterviewData(mongo_res.data);
-      
+      setInterviewData(interviewid);
+      // console.log(mongo_res.data)
+      // console.log("mockId:", mongo_res.data.mockId); 
 
     } catch (e) {
       console.log('Error Fetching Interview : ', e.message);
@@ -48,15 +50,36 @@ function page({params}) {
     <div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 gap-10 '>
-        
+
         {/* Questions */}
         <QuestionsSection MockInterviewQuestion={MockInterviewQuestion} activeQuestion={activeQuestion} />
 
         {/* Video/ voice recording */}
-        <RecordAns MockInterviewQuestion={MockInterviewQuestion} activeQuestion={activeQuestion} interviewData={interviewData}/>
 
+          <RecordAns MockInterviewQuestion={MockInterviewQuestion} activeQuestion={activeQuestion} interviewData={interviewData} />
+
+      
       </div>
 
+      <div className='flex justify-end gap-6 mt-5'>
+        {activeQuestion > 0 && <Button onClick={() => setActiveQuestion(activeQuestion - 1)}>
+          Prev Question
+        </Button>}
+
+
+        {activeQuestion != MockInterviewQuestion?.length - 1 && <Button onClick={() => setActiveQuestion(activeQuestion + 1)}>
+          Next Question
+        </Button>}
+
+        {activeQuestion == MockInterviewQuestion?.length - 1 &&
+
+          <Link href={'/dashboard/Interview/' + interviewData.mockId + '/feedback'} >
+            <Button>
+              End Interview
+            </Button>
+          </Link>}
+
+      </div>
 
 
     </div>

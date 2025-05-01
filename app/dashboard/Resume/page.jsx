@@ -1,6 +1,7 @@
 import React from "react";
 
 const BoxGallery = () => {
+  
   const boxes = [
     {
       id: 1,

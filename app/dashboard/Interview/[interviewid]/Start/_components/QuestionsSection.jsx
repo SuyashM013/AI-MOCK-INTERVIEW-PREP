@@ -23,7 +23,7 @@ function QuestionsSection({ MockInterviewQuestion, activeQuestion }) {
                         <div key={index} >
                             <h2 className={`p-2 rounded-full text-xs md:text-sm text-center cursor-pointer ${activeQuestion == index ? "bg-primary text-white" : "bg-secondary"}`}>Question #{index + 1}</h2>
 
-                            <h3>{question.question}</h3>
+                            {/* <h3>{question.question}</h3> */}
                         </div>
                     )
 

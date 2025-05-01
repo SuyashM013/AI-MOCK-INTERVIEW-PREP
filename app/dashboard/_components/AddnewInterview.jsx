@@ -23,9 +23,6 @@ import { chatSession } from '@/utils/GeminiAiModel';
 import { db } from '@/utils/db';
 import { MockInterview } from '@/utils/schema';
 
-
-
-
 function AddnewInterview() {
 
     const [openDialog, setOpenDialog] = useState(false);

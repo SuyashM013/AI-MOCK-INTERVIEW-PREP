@@ -13,7 +13,7 @@ const Header = () => {
   
   return (
     
-    <nav className="bg-primary/20 mx-5 my-5 rounded-3xl md:rounded-full  lg:max-w-screen-xl shadow-lg md:mx-auto md:max-w-4xl ">
+    <nav className="bg-primary/20 mx-5 my-5 rounded-3xl  md:rounded-full md:mx-20 lg:mx-36 shadow-md">
       <div className="max-w-6xl mx-auto px-5">
         <div className="flex justify-between items-center h-16">
 
