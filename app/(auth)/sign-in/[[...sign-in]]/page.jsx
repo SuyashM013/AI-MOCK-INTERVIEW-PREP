@@ -1,10 +1,10 @@
 
-import { SignIn  } from '@clerk/nextjs'
+import { SignIn } from '@clerk/nextjs'
 
 
 export default function Page() {
 
-    
+
     return (
 
 
@@ -39,8 +39,7 @@ export default function Page() {
                         </h2>
 
                         <p className="mt-4 leading-relaxed text-white/90">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam dolorum aliquam,
-                            quibusdam aperiam voluptatum.
+                            Welcome to conquist your interview with our AI Interview Prep App. Our app is designed to help you prepare for interviews and make the most of your time.
                         </p>
                     </div>
                 </section>
@@ -79,7 +78,7 @@ export default function Page() {
 
                         <div className='m-auto flex flex-col justify-center min-h-full '>
 
-                            <SignIn  />
+                            <SignIn />
                         </div>
 
                     </div>

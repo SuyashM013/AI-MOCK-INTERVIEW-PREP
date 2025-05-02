@@ -7,22 +7,10 @@ import Webcam from 'react-webcam'
 import useSpeechToText from 'react-hook-speech-to-text';
 import { useToast } from "@/hooks/use-toast"
 import { chatSession } from '@/utils/GeminiAiModel';
-import { db } from '@/utils/db';
-import { UserAnswer } from '@/utils/schema';
 import { useUser } from '@clerk/nextjs';
-import { useSelectedLayoutSegment } from 'next/navigation';
+
 
 function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
-
-//     console.log(MockInterviewQuestion); // should not be undefined
-//   console.log(MockInterviewQuestion.activeQuestion);
-//   console.log(MockInterviewQuestion.interviewData);
-
-//   console.log(
-//     "Active Question:",
-//     MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.question
-//   );
-
 
     const [userAnswer, setUserAnswer] = useState('');
     const { user } = useUser();
@@ -53,13 +41,7 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
 
         if (isRecording) {
             stopSpeechToText();
-            if (userAnswer?.length < 10) {
-                setLoading(false);
-                toast({
-                    title: "Answer too short",
-                    description: "Trying again recording answer with proper explanation",
-                })
-            }
+        
         }
         else {
             startSpeechToText();
@@ -85,16 +67,16 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
             const mockJsonResp = fedResult.response.text().replace('```json', '').replace('```', '');
             const JsonFeedbackResp = JSON.parse(mockJsonResp);
 
-            console.log({
-                mockId: MockInterviewQuestion.interviewData,
-                corrAns: MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.answer,
-                userAnswer: userAnswer,
-                    question: MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.question,
-                    rating: JsonFeedbackResp.rating,
-                    feedback: JsonFeedbackResp.feedback,
-                    userEmail: user.primaryEmailAddress?.emailAddress,
-                    createdAt: new Date().toISOString(),
-            })
+            // console.log({
+            //     mockId: MockInterviewQuestion.interviewData,
+            //     corrAns: MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.answer,
+            //     userAnswer: userAnswer,
+            //         question: MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.question,
+            //         rating: JsonFeedbackResp.rating,
+            //         feedback: JsonFeedbackResp.feedback,
+            //         userEmail: user.primaryEmailAddress?.emailAddress,
+            //         createdAt: new Date().toISOString(),
+            // })
     
             const payload = {
                 mockId: MockInterviewQuestion.interviewData,
@@ -124,7 +106,7 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
                 });
                 setUserAnswer('');
                 setResults([]);
-                console.log("Answer saved:", data);
+                // console.log("Answer saved:", data);
             } else {
                 console.error("Error saving answer:", data);
             }
@@ -138,14 +120,6 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
     
     return MockInterviewQuestion &&  (
         <div className='flex flex-col justify-center items-center'>
-
-
-            {/* <h1>Active question: {MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.question}</h1>
-            <h1>Active------- answer: {MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.answer}</h1>
-            <h1>{MockInterviewQuestion[activeQuestion]?.answer}</h1>
-            <h1>Mockid: {MockInterviewQuestion.interviewData}</h1>
-            
-            <h1>User Answer: {userAnswer}</h1> */}
 
             <div className='flex flex-col justify-center items-center bg-black rounded-lg border p-5 mt-20 '>
 
@@ -174,8 +148,6 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
             {/* <Button onClick={() => { console.log(userAnswer) }} >
                 Show Answer
             </Button> */}
-
-        
         </div>
     )
 }

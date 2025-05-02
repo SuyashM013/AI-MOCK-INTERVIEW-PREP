@@ -1,6 +1,5 @@
 'use client'
-// import { db } from '@/utils/db'
-// import { Webcam } from 'lucide-react';
+
 import Webcam from "react-webcam";
 import React, { useEffect, useState } from 'react'
 import { Lightbulb, WebcamIcon } from "lucide-react";
@@ -23,8 +22,6 @@ function Interview({ params }) {
   // Used to fetch interview details from mongo db
   const GetInterviewDetails = async () => {
 
-    // const result = await db.select().from(MockInterview).where(eq(MockInterview.mockId, params.interviewId))
-
     try {
       const res = await fetch('/api/fetchdetails', {
         method: 'POST',
@@ -37,9 +34,6 @@ function Interview({ params }) {
       if (!mongo_res.success) {
         return new Error(mongo_res.error || "Unkown Error");
       }
-
-      // const jsonMockresp = JSON.parse(mongo_res.data.jsonMockResp)
-      // console.log(jsonMockresp)
       setInterviewData(mongo_res.data);
 
     } catch (e) {
@@ -55,14 +49,6 @@ function Interview({ params }) {
 
   return (
     <div className='my-10 '>
-      {/* <div>Interview</div>
-      <div className="p-4">
-        <h1 className="text-2xl font-bold mb-2">{interviewData.jobPosition}</h1>
-        <p><strong>Description:</strong> {interviewData.jobDescription}</p>
-        <p><strong>Experience:</strong> {interviewData.jobExperience}</p>
-        <p><strong>Created By:</strong> {interviewData.createdBy}</p>
-        <p><strong>JSON Response:</strong> {interviewData.jsonMockResp}</p>
-      </div> */}
 
       <h2 className='font-bold text-2xl'>Let's Get Started</h2>
 
@@ -90,7 +76,6 @@ function Interview({ params }) {
 
           {webCamon ? <Webcam
             onUserMedia={() => webCamon(true)}
-            onUserMediaError={() => webCamon(false)}
             mirrored={true}
             style={{ width: 300, height: 300 }}
           />

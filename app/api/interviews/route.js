@@ -8,11 +8,11 @@ import userModel from '@/models/SchemaDB';
 export async function POST(req) {
 
     try {
-        console.log("Connecting to DB...");
+        // console.log("Connecting to DB...");
         await connectDB();
 
         const body = await req.json();
-        console.log("Received body:", body);
+        // console.log("Received body:", body);
         const {
             MockJsonResp,
             jobPosition,
@@ -29,7 +29,7 @@ export async function POST(req) {
             jobDescription: jobDesc,
             jobExperience: jobExp,
             createdBy: userEmail,
-            createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
+            createdAt: moment().format("YYYY-MM-DD"),
         });
 
         return NextResponse.json(

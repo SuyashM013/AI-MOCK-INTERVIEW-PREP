@@ -1,7 +1,5 @@
 
 import * as mongoose from 'mongoose';
-
-
 const MONGO_URI = process.env.NEXT_PUBLIC_MONGO_URI;
 
 if (!MONGO_URI) {
@@ -10,10 +8,8 @@ if (!MONGO_URI) {
 
 const connectDB = async () => {
 
-  
-
     if (mongoose.connections && mongoose.connections[0].readyState) {
-        console.log("✅ Already connected to MongoDB");
+        // console.log("✅ Already connected to MongoDB");
         return;
     }
 
@@ -23,7 +19,7 @@ const connectDB = async () => {
         useUnifiedTopology: true,
     });
 
-    console.log("✅ MongoDB connected");
+    // console.log("✅ MongoDB connected");
 };
 
 export default connectDB;

@@ -9,8 +9,6 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog"
 
-import { v4 as uuidv4 } from 'uuid';
-import moment from 'moment/moment';
 import { LoaderCircle } from 'lucide-react';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
@@ -20,8 +18,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { chatSession } from '@/utils/GeminiAiModel';
-import { db } from '@/utils/db';
-import { MockInterview } from '@/utils/schema';
 
 function AddnewInterview() {
 
@@ -33,9 +29,6 @@ function AddnewInterview() {
     const [jsonResp, setJsonResp] = useState([]);
 
     const router = useRouter();
-
-
-
     const { user } = useUser();
 
     const onSubmit = async (e) => {
@@ -49,29 +42,11 @@ function AddnewInterview() {
 
         const MockJsonResp = (result.response.text().replace('```json', '').replace('```', ''))
 
-        console.log(JSON.parse(MockJsonResp));
+        // console.log(JSON.parse(MockJsonResp));
         setJsonResp(MockJsonResp)
 
         if (MockJsonResp) {
-            // const resp = await db.insert(MockInterview).values({
-            //     mockId: uuidv4(),
-            //     jsonMockResp: MockJsonResp,
-            //     jobPosition: jobPosition,
-            //     jobDescription: jobDesc,
-            //     jobExperience: jobExp,
-            //     createdBy: user?.primaryEmailAddress?.emailAddress,
-            //     createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
-            // }).returning({mockId:MockInterview.mockId})
-
-            // console.log("Inserted ID:", resp)
-
-            // if(resp){
-            //     setOpenDialog(false);
-            //     router.push('/dashboard/interview/'+resp[0]?.mockId);
-
-            // }
-
-
+           
             const resp_mongo = await fetch('/api/interviews', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -100,9 +75,9 @@ function AddnewInterview() {
                 return;
             }
 
-            if (data.success) {
-                console.log('Inserted Id: ', data.mockId);
-            }
+            // if (data.success) {
+            //     // console.log('Inserted Id: ', data.mockId);
+            // }
             else {
                 console.log('Error: ', data.error);
             }

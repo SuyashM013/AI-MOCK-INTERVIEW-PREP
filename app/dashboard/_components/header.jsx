@@ -41,8 +41,8 @@ const Header = () => {
               ${path == '/dashboard' && 'text-primary font-bold'}`}
             >Dashboard</Link>
 
-            <Link href="/dashboard/questions" className={` hover:text-primary
-              ${path == '/dashboard/questions' && 'text-primary font-bold'}`}>Questions</Link>
+            {/* <Link href="/dashboard/questions" className={` hover:text-primary */}
+              {/* ${path == '/dashboard/questions' && 'text-primary font-bold'}`}>Questions</Link> */}
 
             <Link href="/dashboard/Upgrade" className={` hover:text-primary
               ${path == '/dashboard/Upgrade' && 'text-primary font-bold'}`}>Upgrade</Link>
@@ -86,13 +86,15 @@ const Header = () => {
               >
                 Dashboard
               </Link>
-              <Link
+
+              {/* <Link
                 href="/dashboard/questions"
                 className={`block px-3 py-2   hover:text-primary  rounded-md
                   ${path == '/dashboard/questions' && 'text-primary font-bold'}`}
               >
                 Questions
-              </Link>
+              </Link> */}
+
               <Link
                 href="/dashboard/Upgrade"
                 className={`block px-3 py-2   hover:text-primary  rounded-md

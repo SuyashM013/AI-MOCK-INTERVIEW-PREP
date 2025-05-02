@@ -34,7 +34,7 @@ function page({ params }) {
       }
 
       const jsonMockresp = JSON.parse(mongo_res.data.jsonMockResp)
-      console.log(jsonMockresp)
+      // console.log(jsonMockresp)
       setMockInterviewQuestion(jsonMockresp);
       setInterviewData(interviewid);
       // console.log(mongo_res.data)
@@ -73,7 +73,7 @@ function page({ params }) {
 
         {activeQuestion == MockInterviewQuestion?.length - 1 &&
 
-          <Link href={'/dashboard/Interview/' + interviewData.mockId + '/feedback'} >
+          <Link href={'/dashboard/Interview/' + interviewid + '/feedback'} >
             <Button>
               End Interview
             </Button>
