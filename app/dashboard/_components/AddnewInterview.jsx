@@ -46,7 +46,7 @@ function AddnewInterview() {
         setJsonResp(MockJsonResp)
 
         if (MockJsonResp) {
-           
+
             const resp_mongo = await fetch('/api/interviews', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -64,7 +64,7 @@ function AddnewInterview() {
 
             if (resp_mongo) {
                 setOpenDialog(false);
-                router.push('/dashboard/Interview/'+data.mockId);
+                router.push('/dashboard/Interview/' + data.mockId);
 
             }
 

@@ -67,7 +67,7 @@ export default function HomePage() {
 
               </div>
             </div>
-            <div className="flex items-center justify-between gap-5">
+            <div className="flex font-chau text-lg items-center justify-between gap-5">
 
               <div className=' hidden md:flex flex-row items-center space-x-4'>
 
@@ -99,9 +99,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="grid md:grid-cols-2 gap-12 items-center" >
             <div>
-              <h1 className="text-4xl font-bold mb-6">Ace Your Next Interview with AI-Powered Mock Interview</h1>
-              <p className="text-xl mb-8">Get personalized interview preparation with real-time feedback, industry-specific questions, and expert tips.</p>
-              <p className="text-xl mb-8">Make your desired Interview relavent to your Job Position, Job Skills and Experience </p>
+              <h1 className="text-6xl font-bebas mb-6">Ace Your Next Interview with AI-Powered Mock Interview</h1>
+              <p className="text-xl font-montserrat mb-8">Get personalized interview preparation with real-time feedback, industry-specific questions, and expert tips.</p>
+              <p className="text-xl font-montserrat mb-8">Make your desired Interview relavent to your Job Position, Job Skills and Experience </p>
               <div className="flex space-x-4">
                 <Link href="/dashboard" className="px-6 py-3 bg-white text-indigo-700 rounded-lg font-medium hover:bg-gray-100 flex items-center">
                   Start Practicing <ArrowRight className="ml-2 h-5 w-5" />
@@ -153,9 +153,9 @@ export default function HomePage() {
       <section className="py-20 bg-white" id="resume-feature">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">ATS-Friendly Resume Templates</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Download professional resume templates designed to pass through Applicant Tracking Systems.</p>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Customize the resume according to your needs and skills</p>
+            <h2 className="text-5xl font-bebas text-gray-900 mb-4">ATS-Friendly Resume Templates</h2>
+            <p className="text-xl font-montserrat text-gray-600 max-w-3xl mx-auto">Download professional resume templates designed to pass through Applicant Tracking Systems.</p>
+            <p className="text-xl font-montserrat text-gray-600 max-w-3xl mx-auto">Customize the resume according to your needs and skills</p>
           </div>
 
           <div className="grid  md:grid-cols-2 gap-16 items-center">
@@ -197,7 +197,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="order-1 md:order-2">
+            <div className="order-1 font-montserrat md:order-2">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Stand Out With ATS-Optimized Templates</h3>
               <p className="text-gray-600 mb-6">Our professionally designed resume templates are built to help you get past applicant tracking systems and land more interviews.</p>
 
@@ -228,8 +228,8 @@ export default function HomePage() {
       <section className="py-20 bg-gray-50" id="features">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Features That Set Us Apart</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Practice interviews like never before with our comprehensive AI-powered platform.</p>
+            <h2 className="text-5xl font-bebas text-gray-900 mb-4">Features That Set Us Apart</h2>
+            <p className="text-xl font-montserrat text-gray-600 max-w-3xl mx-auto">Practice interviews like never before with our comprehensive AI-powered platform.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -265,7 +265,7 @@ export default function HomePage() {
                 description: 'Track your progress and identify areas for improvement over time.'
               }
             ].map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
+              <div key={index} className="bg-white font-montserrat p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
                 <div className="bg-indigo-100 p-3 rounded-full w-fit mb-4">
                   {feature.icon}
                 </div>
@@ -281,8 +281,8 @@ export default function HomePage() {
       <section className="py-20 bg-white" id="pricing">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Choose Your Plan</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Select the plan that best fits your interview preparation needs.</p>
+            <h2 className="text-5xl font-bebas text-gray-900 mb-4">Choose Your Plan</h2>
+            <p className="text-xl font-montserrat text-gray-600 max-w-3xl mx-auto">Select the plan that best fits your interview preparation needs.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -334,7 +334,7 @@ export default function HomePage() {
             ].map((plan, index) => (
               <div
                 key={index}
-                className={`rounded-xl shadow-md p-8 md:hover:scale-105 transition-transform duration-300 ${plan.highlighted
+                className={`rounded-xl font-montserrat shadow-md p-8 md:hover:scale-105 transition-transform duration-300 ${plan.highlighted
                   ? 'bg-gradient-to-b from-indigo-600 to-indigo-700 text-white shadow-lg '
                   : 'bg-gray-50 border border-gray-200'
                   }`}
@@ -372,8 +372,8 @@ export default function HomePage() {
       <section className="py-20 bg-gray-50" id="faq">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">Got questions? We've got answers.</p>
+            <h2 className="text-5xl font-bebas text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <p className="text-xl font-montserrat text-gray-600">Got questions? We've got answers.</p>
           </div>
 
           <div className="space-y-6">
@@ -399,7 +399,7 @@ export default function HomePage() {
                 answer: 'You can cancel your subscription anytime from your account settings. Your access will continue until the end of your current billing period.'
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
+              <div key={index} className="bg-white font-montserrat p-6 rounded-xl shadow-sm">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{faq.question}</h3>
                 <p className="text-gray-600">{faq.answer}</p>
               </div>
@@ -419,11 +419,11 @@ export default function HomePage() {
       <section className="py-20 bg-white" id="contact">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Have questions or feedback? Send us a message.</p>
+            <h2 className="text-5xl font-bebas text-gray-900 mb-4">Get In Touch</h2>
+            <p className="text-xl font-montserrat text-gray-600 max-w-3xl mx-auto">Have questions or feedback? Send us a message.</p>
           </div>
 
-          <div className="bg-gray-50 rounded-xl p-8 shadow-sm">
+          <div className="bg-gray-50 font-montserrat rounded-xl p-8 shadow-sm">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -504,7 +504,7 @@ export default function HomePage() {
                 <span className='font-bold text-xl'>  AI Interviewer </span>
 
               </div>
-              <p className="mb-4">Helping you prepare for your dream job with AI-powered interview practice.</p>
+              <p className="mb-4 font-montserrat">Helping you prepare for your dream job with AI-powered interview practice.</p>
 
               <div className="flex space-x-4 pt-3 text-center">
 
@@ -534,8 +534,8 @@ export default function HomePage() {
 
 
             <div className='md:text-center' >
-              <h4 className="text-white text-lg font-bold mb-4">Features</h4>
-              <ul className="space-y-2">
+              <h4 className="text-white text-2xl font-bebas mb-4">Features</h4>
+              <ul className="space-y-2 font-montserrat">
                 <li><Link href="#" className="hover:text-white">Resume Templates</Link></li>
                 <li><Link href="#" className="hover:text-white">Mock Interviews</Link></li>
                 <li><Link href="#" className="hover:text-white">Real-time Feedback</Link></li>
@@ -544,8 +544,8 @@ export default function HomePage() {
             </div>
 
             <div className='md:text-center'>
-              <h4 className="text-white text-lg font-bold mb-4">Resources</h4>
-              <ul className="space-y-2">
+              <h4 className="text-white text-2xl font-bebas mb-4">Resources</h4>
+              <ul className="space-y-2 font-montserrat">
                 <li><Link href="#" className="hover:text-white">Blog</Link></li>
                 <li><Link href="#" className="hover:text-white">Tutorials</Link></li>
                 <li><Link href="#" className="hover:text-white">Interview Guides</Link></li>
@@ -555,8 +555,8 @@ export default function HomePage() {
 
 
             <div className='md:text-center'>
-              <h4 className="text-white text-lg font-bold mb-4">Company</h4>
-              <ul className="space-y-2">
+              <h4 className="text-white text-2xl font-bebas mb-4">Company</h4>
+              <ul className="space-y-2 font-montserrat">
                 <li><Link href="#" className="hover:text-white">About Us</Link></li>
                 <li><Link href="#" className="hover:text-white">Contact</Link></li>
                 {/* <li><Link href="#" className="hover:text-white">Careers</Link></li> */}
@@ -566,7 +566,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="border-t font-montserrat border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="mt-4 md:mt-0">
               <h3>Made with ❤️ by Syntax Error</h3>
             </div>

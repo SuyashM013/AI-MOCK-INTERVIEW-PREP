@@ -17,9 +17,9 @@ function InterviewCard({ interview }) {
     return (
         <div className='border hover:shadow-md bg-blue-50 shadow-sm rounded-lg p-3'>
 
-            <h2 className='font-bold text-primary uppercase'> {interview.jobPosition}</h2>
-            <h2 className='text-sm text-gray-600'>{interview.jobExperience} Years of Experience</h2>
-            <h2 className='text-sm text-gray-400'>Created At: {interview.createdAt}</h2>
+            <h2 className='font-bebas text-3xl  text-primary uppercase'> {interview.jobPosition}</h2>
+            <h2 className='text-sm font-montserrat text-gray-600'>{interview.jobExperience} Years of Experience</h2>
+            <h2 className='text-sm font-montserrat text-gray-400'>Created At: {interview.createdAt}</h2>
 
             <div className='flex justify-between gap-5 mt-5'>
 

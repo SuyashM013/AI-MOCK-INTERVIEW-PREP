@@ -106,7 +106,7 @@ const BoxGallery = () => {
   return (
     <div className="">
       <div className="pt-8 ">
-        <h1 className="text-3xl font-bold text-center mb-8">Resume Gallery</h1>
+        <h1 className="text-5xl font-bebas text-center mb-8">Resume Gallery</h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {boxes.map((box) => (
             <div

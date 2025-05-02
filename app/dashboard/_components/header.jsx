@@ -34,25 +34,25 @@ const Header = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden font-chau text-xl md:flex space-x-8">
             <Link
               href="/dashboard"
               className={` hover:text-primary
-              ${path == '/dashboard' && 'text-primary font-bold'}`}
+              ${path == '/dashboard' && 'text-primary'}`}
             >Dashboard</Link>
 
             {/* <Link href="/dashboard/questions" className={` hover:text-primary */}
               {/* ${path == '/dashboard/questions' && 'text-primary font-bold'}`}>Questions</Link> */}
 
             <Link href="/dashboard/Upgrade" className={` hover:text-primary
-              ${path == '/dashboard/Upgrade' && 'text-primary font-bold'}`}>Upgrade</Link>
+              ${path == '/dashboard/Upgrade' && 'text-primary '}`}>Upgrade</Link>
 
             <Link href="/dashboard/Resume" className={` hover:text-primary
-              ${path == '/Resume' && 'text-primary font-bold'}`}>Resume</Link>
+              ${path == '/Resume' && 'text-primary '}`}>Resume</Link>
 
           </div>
 
-          <div className='flex gap-5 items-center justify-center'>
+          <div className='flex gap-5 items-center  font-chau text-xl  justify-center'>
             {/* Hamburger Button */}
             <div className="md:hidden">
               <button
@@ -77,12 +77,12 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden">
+          <div className="md:hidden font-chau text-xl ">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
                 href="/dashboard"
                 className={`block px-3 py-2   hover:text-primary  rounded-md
-                  ${path == '/dashboard' && 'text-primary font-bold'}`}
+                  ${path == '/dashboard' && 'text-primary '}`}
               >
                 Dashboard
               </Link>
@@ -98,14 +98,14 @@ const Header = () => {
               <Link
                 href="/dashboard/Upgrade"
                 className={`block px-3 py-2   hover:text-primary  rounded-md
-                  ${path == '/dashboard/Upgrade' && 'text-primary font-bold'}`}
+                  ${path == '/dashboard/Upgrade' && 'text-primary '}`}
               >
                 Upgrade
               </Link>
               <Link
                 href="/dashboard/Resume"
                 className={`block px-3 py-2   hover:text-primary  rounded-md
-                  ${path == '/Resume' && 'text-primary font-bold'}`}
+                  ${path == '/Resume' && 'text-primary '}`}
               >
                 Resume
               </Link>

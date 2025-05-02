@@ -31,7 +31,7 @@ function Footer() {
                             <span className='font-bold text-xl'>  AI Interviewer </span>
 
                         </div>
-                        <p className="mb-4">Helping you prepare for your dream job with AI-powered interview practice.</p>
+                        <p className="mb-4 font-montserrat">Helping you prepare for your dream job with AI-powered interview practice.</p>
 
                         <div className="flex space-x-4 pt-3 text-center">
 
@@ -61,8 +61,8 @@ function Footer() {
 
 
                     <div className='md:text-center' >
-                        <h4 className="text-white text-lg font-bold mb-4">Features</h4>
-                        <ul className="space-y-2">
+                        <h4 className="text-white text-2xl font-bebas mb-4">Features</h4>
+                        <ul className="space-y-2 font-montserrat">
                             <li><Link href="#" className="hover:text-white">Resume Templates</Link></li>
                             <li><Link href="#" className="hover:text-white">Mock Interviews</Link></li>
                             <li><Link href="#" className="hover:text-white">Real-time Feedback</Link></li>
@@ -71,8 +71,8 @@ function Footer() {
                     </div>
 
                     <div className='md:text-center'>
-                        <h4 className="text-white text-lg font-bold mb-4">Resources</h4>
-                        <ul className="space-y-2">
+                        <h4 className="text-white text-2xl font-bebas mb-4">Resources</h4>
+                        <ul className="space-y-2 font-montserrat">
                             <li><Link href="#" className="hover:text-white">Blog</Link></li>
                             <li><Link href="#" className="hover:text-white">Tutorials</Link></li>
                             <li><Link href="#" className="hover:text-white">Interview Guides</Link></li>
@@ -82,8 +82,8 @@ function Footer() {
 
 
                     <div className='md:text-center'>
-                        <h4 className="text-white text-lg font-bold mb-4">Company</h4>
-                        <ul className="space-y-2">
+                        <h4 className="text-white text-2xl font-bebas mb-4">Company</h4>
+                        <ul className="space-y-2 font-montserrat">
                             <li><Link href="#" className="hover:text-white">About Us</Link></li>
                             <li><Link href="#" className="hover:text-white">Contact</Link></li>
                             {/* <li><Link href="#" className="hover:text-white">Careers</Link></li> */}
@@ -93,7 +93,7 @@ function Footer() {
                     </div>
                 </div>
 
-                <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div className="border-t font-montserrat border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
                     <div className="mt-4 md:mt-0">
                         <h3>Made with ❤️ by Syntax Error</h3>
                     </div>

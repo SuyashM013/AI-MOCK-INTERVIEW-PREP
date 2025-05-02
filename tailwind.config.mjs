@@ -8,6 +8,11 @@ export default {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				bebas: ["Bebas Neue", 'sans-serif'],
+				montserrat: ["Montserrat", 'sans-serif'],
+				chau: ["Chau Philomene One", 'sans-serif'],
+			},
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
