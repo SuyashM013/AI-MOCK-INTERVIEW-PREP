@@ -2,7 +2,7 @@
 
 import { useUser } from '@clerk/nextjs'
 import React, { useEffect, useState } from 'react'
-import InterviewCard from './interviewCard';
+import InterviewCard from './InterviewCard';
 
 function InterviewList() {
 
