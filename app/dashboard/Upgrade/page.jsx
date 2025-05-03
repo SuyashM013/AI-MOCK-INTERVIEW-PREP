@@ -2,7 +2,7 @@ import React from 'react'
 
 function Upgrade() {
   return (
-    <div>Upgrade</div>
+    <div className='p-10'>Upgrade</div>
   )
 }
 

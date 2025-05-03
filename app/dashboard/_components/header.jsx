@@ -34,7 +34,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden font-chau text-xl md:flex space-x-8">
+          <div className="hidden font-chau text-lg md:flex space-x-8">
             <Link
               href="/dashboard"
               className={` hover:text-primary
@@ -77,7 +77,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden font-chau text-xl ">
+          <div className="md:hidden font-chau text-lg ">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
                 href="/dashboard"

@@ -11,7 +11,7 @@ export default {
 			fontFamily: {
 				bebas: ["Bebas Neue", 'sans-serif'],
 				montserrat: ["Montserrat", 'sans-serif'],
-				chau: ["Chau Philomene One", 'sans-serif'],
+				chau: ["Exo 2", 'sans-serif'],
 			},
 			colors: {
 				background: 'hsl(var(--background))',

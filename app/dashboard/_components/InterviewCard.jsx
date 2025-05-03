@@ -15,7 +15,7 @@ function InterviewCard({ interview }) {
     }
 
     return (
-        <div className='border hover:shadow-md bg-blue-50 shadow-sm rounded-lg p-3'>
+        <div className='border border-blue-200 hover:shadow-md bg-blue-50 shadow-sm rounded-lg p-3'>
 
             <h2 className='font-bebas text-3xl  text-primary uppercase'> {interview.jobPosition}</h2>
             <h2 className='text-sm font-montserrat text-gray-600'>{interview.jobExperience} Years of Experience</h2>
@@ -23,9 +23,9 @@ function InterviewCard({ interview }) {
 
             <div className='flex justify-between gap-5 mt-5'>
 
-                <Button onClick={onFeedback} variant='outline' className='w-full'>Feedback</Button>
+                <Button onClick={onFeedback} variant='outline' className='w-full font-chau'>Feedback</Button>
 
-                <Button onClick={onStart} className='w-full'>Start</Button>
+                <Button onClick={onStart} className='w-full font-chau'>Start</Button>
                 
             </div>
 
