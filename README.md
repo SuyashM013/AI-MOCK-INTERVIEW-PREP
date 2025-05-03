@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🤖 AI Mock Interview App
 
-## Getting Started
+An AI-powered mock interview platform that simulates real-time interviews based on your chosen job role and experience level. Designed to help users practice and prepare with realistic, intelligent questions.
 
-First, run the development server:
+## 🚀 Live Demo
 
+[![View on Vercel](https://img.shields.io/badge/Vercel-Live%20Demo-black?logo=vercel&style=for-the-badge)](https://ai-mock-interviewer-eosin.vercel.app)
+
+[![View on Netlify](https://img.shields.io/badge/Netlify-Live%20Demo-00C7B7?logo=netlify&style=for-the-badge)](https://ai-mockinterviewer.netlify.app)
+
+
+
+## 🛠 Tech Stack
+
+- **Frontend:** Next.js, Tailwind CSS, ShadCN UI
+- **Backend:** API Routes, Node, Express
+- **Database:** MongoDB (via Mongoose)
+- **Authentication:** Clerk
+- **AI Model:** Gemini AI model (gemini-1.5-flash)
+- **Deployment:** Vercel, Netlify
+
+## ✨ Features
+
+- 🧠 AI-generated mock interview questions
+- 📄 Resume template generator after sign-up
+- 👤 User-specific interview history (stored in DB)
+- 🔐 Secure and dynamic role-based question flow
+- 📊 Clean and responsive UI with modern design
+
+## 🧑‍💻 Local Setup
+
+Follow these steps to run the project locally:
+
+### 1. Clone the repo
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/SuyashM013/AI-MOCK-INTERVIEW-PREP
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. Create environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file in the root and add:
 
-## Learn More
+```
+MONGODB_URI=your_mongodb_connection_string
+GEMINI_API_KEY=your_gemini_api_key
 
-To learn more about Next.js, take a look at the following resources:
+```
+For privacy, security and ownership reasons, all env variables are not publicly disclosed. These are just sample variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Run the development server
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧠 AI Integration: Gemini AI Model
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+We use Gemini AI to generate intelligent and relevant questions based on:
+- The user's selected role
+- Years of experience
+- Interview history stored in the database
+
+## 📦 Deployment
+
+The project is deployed using [Vercel](https://vercel.com) & [Netlify](https://netlify.com), offering:
+- Serverless functions for API routes
+- Easy environment management
+- Continuous deployment from GitHub
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙋‍♂️ Author
+
+Made with 💻 by Suyash Mishra
+
+Feel free to reach out or connect on [LinkedIn](www.linkedin.com/in/mishrasuyash013)
