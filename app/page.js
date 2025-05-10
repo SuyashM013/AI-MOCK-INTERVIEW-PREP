@@ -31,12 +31,14 @@ import res2 from '@/public/Minor/res-2.png';
 import res3 from '@/public/Minor/res-3.png';
 import res4 from '@/public/Minor/res-4.png';
 import mainp from '@/public/Other/Int-1.png';
+import { useRouter } from 'next/navigation';
 
 
 
 export default function HomePage() {
   const [showVideoModal, setShowVideoModal] = useState(false);
   const [isPopupOpen, setPopupOpen] = useState(false);
+  const router = useRouter();
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -356,7 +358,7 @@ export default function HomePage() {
                   ))}
                 </ul>
 
-                <button className={`w-full py-3 rounded-lg font-medium ${plan.highlighted
+                <button onClick={() => router.replace('/dashboard/Upgrade')} className={`w-full py-3 rounded-lg font-medium ${plan.highlighted
                   ? 'bg-white text-indigo-600 hover:bg-gray-100'
                   : 'bg-indigo-600 text-white hover:bg-indigo-700'
                   }`}>
