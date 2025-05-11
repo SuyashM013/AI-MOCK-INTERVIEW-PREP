@@ -2,7 +2,7 @@ import React from "react";
 
 const TermsOfService = () => {
     return (
-        <div className="max-w-5xl mx-auto py-8 flex flex-col gap-4 font-montserrat">
+        <div className="max-w-5xl mx-auto p-8 flex flex-col gap-4 font-montserrat">
 
             <h1 className="text-6xl  text-primary font-bebas">Terms of Service</h1>
             <p>Welcome to AI Mock Interviewer. These Terms of Service govern your use of our platform. Please read them carefully before using our services.</p>

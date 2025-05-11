@@ -2,7 +2,7 @@ import React from "react";
 
 const PrivacyPolicy = () => {
     return (
-        <div className=" max-w-5xl mx-auto py-8 flex flex-col gap-4 font-montserrat">
+        <div className=" max-w-5xl mx-auto p-8 flex flex-col gap-4 font-montserrat">
 
             <h1 className="text-6xl  text-primary font-bebas">Privacy Policy</h1>
             <p>At AI Mock Interviewer, we prioritize your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and protect your data.</p>
