@@ -40,6 +40,28 @@ export default function HomePage() {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const router = useRouter();
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const mailtoLink = `mailto:Mishrasuyash013@gmail.com?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    )}`;
+    window.location.href = mailtoLink;
+  };
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -426,7 +448,7 @@ export default function HomePage() {
           </div>
 
           <div className="bg-gray-50 font-montserrat rounded-xl p-8 shadow-sm">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-md font-medium text-gray-700 mb-1">
@@ -435,8 +457,11 @@ export default function HomePage() {
                   <input
                     type="text"
                     id="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     placeholder="John Doe"
+                    required
                   />
                 </div>
                 <div>
@@ -446,8 +471,11 @@ export default function HomePage() {
                   <input
                     type="email"
                     id="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     placeholder="john@example.com"
+                    required
                   />
                 </div>
               </div>
@@ -459,8 +487,11 @@ export default function HomePage() {
                 <input
                   type="text"
                   id="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                   placeholder="How can we help you?"
+                  required
                 />
               </div>
 
@@ -471,8 +502,11 @@ export default function HomePage() {
                 <textarea
                   id="message"
                   rows="4"
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                   placeholder="Your message here..."
+                  required
                 ></textarea>
               </div>
 
@@ -559,7 +593,7 @@ export default function HomePage() {
             <div className='md:text-center'>
               <h4 className="text-white text-2xl font-bebas mb-4">Company</h4>
               <ul className="space-y-2 font-montserrat">
-                <li><button onClick={() => { scrollToSection("faq") }}  className="hover:text-white">About Us</button></li>
+                <li><button onClick={() => { scrollToSection("faq") }} className="hover:text-white">About Us</button></li>
                 <li><button onClick={() => { scrollToSection("contact") }} className="hover:text-white">Contact</button></li>
                 {/* <li><Link href="#" className="hover:text-white">Careers</Link></li> */}
                 <li><Link href="/PrivacyPolicy" className="hover:text-white">Privacy Policy</Link></li>
