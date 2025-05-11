@@ -218,7 +218,7 @@ export default function HomePage() {
                 ))}
               </ul>
 
-              <a href="/dashboard/resume" className="w-fit mt-8 px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 flex items-center">
+              <a href="/dashboard/Resume" className="w-fit mt-8 px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 flex items-center">
                 View All Templates <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </div>

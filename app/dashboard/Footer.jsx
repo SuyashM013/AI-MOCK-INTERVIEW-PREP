@@ -14,6 +14,8 @@ import {
 import Link from 'next/link';
 
 function Footer() {
+
+   
     return (
         <footer className="bg-gray-900 text-gray-300 py-12 mt-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,11 +86,11 @@ function Footer() {
                     <div className='md:text-center'>
                         <h4 className="text-white text-2xl font-bebas mb-4">Company</h4>
                         <ul className="space-y-2 font-montserrat">
-                            <li><Link href="#" className="hover:text-white">About Us</Link></li>
-                            <li><Link href="#" className="hover:text-white">Contact</Link></li>
-                            {/* <li><Link href="#" className="hover:text-white">Careers</Link></li> */}
-                            <li><Link href="#" className="hover:text-white">Privacy Policy</Link></li>
-                            <li><Link href="#" className="hover:text-white">Terms of Service</Link></li>
+                            <li><Link href="/" className="hover:text-white">About Us</Link></li>
+                            <li><Link href="/" className="hover:text-white">Contact</Link></li>
+                            
+                            <li><Link href="/./PrivacyPolicy" className="hover:text-white">Privacy Policy</Link></li>
+                            <li><Link href="/./TermsofService" className="hover:text-white">Terms of Service</Link></li>
                         </ul>
                     </div>
                 </div>
