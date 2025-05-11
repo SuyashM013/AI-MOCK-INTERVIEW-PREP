@@ -32,16 +32,21 @@ export default function RootLayout({ children }) {
         baseTheme: neobrutalism,
       }}>
       <html lang="en">
+        <head>
+          <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+          {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> */}
+        </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
 
           <Toaster />
-          
-            {children}
-        
+
+          {children}
+
         </body>
       </html>
-     </ClerkProvider> 
+    </ClerkProvider>
   );
 }

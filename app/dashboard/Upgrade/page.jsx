@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CheckCircle,
   Terminal,
@@ -18,6 +18,66 @@ function Upgrade() {
     </Alert>
     alert('You can add components and dependencies to your app using the cli.')
   }
+
+
+  const [loading, setLoading] = useState(false);
+
+  async function initiatePayment() {
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/create-order", {
+        method: "POST",
+      });
+      const order = await response.json();
+
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+        amount: order.amount,
+        currency: order.currency,
+        order_id: order.id,
+        name: "AI Mock Interview ",
+        description: "Payment for Mock Interview Session",
+        handler: async (response) => {
+          const verifyRes = await fetch("/api/payment-verify", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              razorpayOrderId: response.razorpay_order_id,
+              razorpayPaymentId: response.razorpay_payment_id,
+              signature: response.razorpay_signature,
+            }),
+          });
+
+          const verifyData = await verifyRes.json();
+          if (verifyData.status === "success") {
+            alert("Payment verified successfully");
+          } else {
+            alert("Payment verification failed");
+          }
+        },
+        prefill: {
+          name: "John Doe",
+          email: "john.doe@example.com",
+          contact: "123456789",
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+      setLoading(false);
+    } catch (error) {
+      console.error("Error initiating payment:", error);
+      setLoading(false);
+    }
+  }
+
+
   return (
     <div className=''>
       <section className="py-10 bg-white" id="pricing">
@@ -40,7 +100,7 @@ function Upgrade() {
                   'Text-based interviews',
                   'Resume templates',
                 ],
-                buttonText: 'Start Free',
+                buttonText: 'Already Using Free',
                 highlighted: false
               },
               {
@@ -70,7 +130,7 @@ function Upgrade() {
                   'Custom question sets',
                   'Resume Guidence',
                 ],
-                buttonText: 'Comming Soon, Contact Sales',
+                buttonText: 'Contact Sales',
                 highlighted: false
               }
             ].map((plan, index) => (
@@ -104,6 +164,15 @@ function Upgrade() {
                   }`}>
                   {plan.buttonText}
                 </button>
+
+                <button
+                  onClick={initiatePayment}
+                  disabled={loading}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                >
+                  {loading ? "Processing..." : "Pay with Razorpay"}
+                </button>
+
               </div>
             ))}
           </div>
@@ -112,5 +181,27 @@ function Upgrade() {
     </div>
   )
 }
+
+
+
+// "use client";
+
+// import { useState } from "react";
+
+// export default function Upgrade() {
+
+
+//   return (
+//     <div>
+//       <button
+//         onClick={initiatePayment}
+//         disabled={loading}
+//         className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+//       >
+//         {loading ? "Processing..." : "Pay with Razorpay"}
+//       </button>
+//     </div>
+//   );
+// }
 
 export default Upgrade

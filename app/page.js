@@ -60,6 +60,12 @@ export default function HomePage() {
       `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
     )}`;
     window.location.href = mailtoLink;
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    })
   };
 
   const scrollToSection = (id) => {
