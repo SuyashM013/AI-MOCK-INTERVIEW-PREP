@@ -1,22 +1,24 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   CheckCircle,
-  Terminal,
 } from 'lucide-react';
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+
+
+import Swal from 'sweetalert2'
 
 
 function Upgrade() {
+
   const alertdo = () => {
-    <Alert>
-      <Terminal className="h-4 w-4" />
-      <AlertTitle>Heads up!</AlertTitle>
-      <AlertDescription>
-        You can add components and dependencies to your app using the cli.
-      </AlertDescription>
-    </Alert>
-    alert('You can add components and dependencies to your app using the cli.')
+    let timerInterval;
+    Swal.fire({
+      position: "top",
+      title: "Already Enrolled",
+      timer: 1000,
+      timerProgressBar: true,
+    })
+
   }
 
 
@@ -134,6 +136,8 @@ function Upgrade() {
                 highlighted: false
               }
             ].map((plan, index) => (
+
+
               <div
                 key={index}
                 className={`rounded-xl font-montserrat shadow-md p-8 md:hover:scale-105 transition-transform duration-300 ${plan.highlighted
@@ -141,6 +145,7 @@ function Upgrade() {
                   : 'bg-gray-50 border border-gray-200'
                   }`}
               >
+
                 <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
                 <div className="flex items-baseline mb-4">
                   <span className="text-3xl font-bold">{plan.price}</span>
@@ -174,7 +179,53 @@ function Upgrade() {
                 </button>
 
               </div>
+
+
             ))}
+
+            <div
+              className='rounded-xl font-montserrat shadow-md p-8 md:hover:scale-105 transition-transform duration-300 bg-gray-50 border border-gray-200'
+            >
+
+              <h3 className="text-2xl font-bold mb-2">Free</h3>
+              <div className="flex items-baseline mb-4">
+                <span className="text-3xl font-bold">0 ₹</span>
+                {/* {plan.period && <span className={plan.highlighted ? 'text-indigo-100' : 'text-gray-500'}>{plan.period}</span>} */}
+              </div>
+              <p className='mb-6 text-gray-600'>Basic interview practice</p>
+
+              <ul className="space-y-4 mb-8">
+                {plan.features.map((feature, fIndex) => (
+                  <li key={fIndex} className="flex items-start">
+                    <CheckCircle className={`h-5 w-5 mr-2 mt-1 flex-shrink-0 ${plan.highlighted ? 'text-indigo-200' : 'text-green-500'
+                      }`} />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button onClick={() => { alertdo() }} className={`w-full py-3 rounded-lg font-medium ${plan.highlighted
+                ? 'bg-white text-indigo-600 hover:bg-gray-100'
+                : 'bg-indigo-600 text-white hover:bg-indigo-700'
+                }`}>
+                {plan.buttonText}
+              </button>
+
+              <button
+                onClick={initiatePayment}
+                disabled={loading}
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              >
+                {loading ? "Processing..." : "Pay with Razorpay"}
+              </button>
+
+            </div>
+
+
+
+
+
+
           </div>
         </div>
       </section>
