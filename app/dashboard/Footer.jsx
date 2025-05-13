@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 import Image from "next/image";
@@ -13,7 +14,20 @@ import {
 
 import Link from 'next/link';
 
+import Swal from 'sweetalert2'
+
 function Footer() {
+
+    const alertdo = () => {
+      
+        Swal.fire({
+          position: "top",
+          title: "Coming Soon",
+          timer: 1000,
+          timerProgressBar: true,
+        })
+    
+      }
 
    
     return (
@@ -37,23 +51,23 @@ function Footer() {
 
                         <div className="flex space-x-4 pt-3 text-center">
 
-                            <a href="#" className="hover:text-white hover:bg-blue-400 p-1 rounded-full">
+                            <a href="#" className="hover:text-blue-300">
                                 <span className="sr-only">Linkedin</span>
                                 <Linkedin />
                             </a>
-                            <a href="#" className="hover:text-white">
+                            <a href="#" className="hover:text-blue-300">
                                 <span className="sr-only">Twitter</span>
                                 <Twitter />
                             </a>
-                            <a href="#" className="hover:text-white">
+                            <a href="#" className="hover:text-blue-300">
                                 <span className="sr-only">Github</span>
                                 <Github />
                             </a>
-                            <a href="#" className="hover:text-white">
+                            <a href="#" className="hover:text-blue-300">
                                 <span className="sr-only">Facebook</span>
                                 <Facebook />
                             </a>
-                            <a href="#" className="hover:text-white">
+                            <a href="#" className="hover:text-blue-300">
                                 <span className="sr-only">Instagram</span>
                                 <Instagram />
                             </a>
@@ -75,10 +89,10 @@ function Footer() {
                     <div className='md:text-center'>
                         <h4 className="text-white text-2xl font-bebas mb-4">Resources</h4>
                         <ul className="space-y-2 font-montserrat">
-                            <li><Link href="#" className="hover:text-white">Blog</Link></li>
-                            <li><Link href="#" className="hover:text-white">Tutorials</Link></li>
-                            <li><Link href="#" className="hover:text-white">Interview Guides</Link></li>
-                            <li><Link href="#" className="hover:text-white">Success Stories</Link></li>
+                            <li><button onClick={() => { alertdo() }} className="hover:text-white">Blog</button></li>
+                            <li><button onClick={() => { alertdo() }}className="hover:text-white">Tutorials</button></li>
+                            <li><button onClick={() => { alertdo() }}className="hover:text-white">Interview Guides</button></li>
+                            <li><button onClick={() => { alertdo() }} className="hover:text-white">Success Stories</button></li>
                         </ul>
                     </div>
 

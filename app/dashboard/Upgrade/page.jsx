@@ -4,14 +4,12 @@ import {
   CheckCircle,
 } from 'lucide-react';
 
-
 import Swal from 'sweetalert2'
-
 
 function Upgrade() {
 
   const alertdo = () => {
-    let timerInterval;
+  
     Swal.fire({
       position: "top",
       title: "Already Enrolled",
@@ -79,7 +77,6 @@ function Upgrade() {
     }
   }
 
-
   return (
     <div className=''>
       <section className="py-10 bg-white" id="pricing">
@@ -90,98 +87,6 @@ function Upgrade() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* {[
-              {
-                title: 'Free',
-                price: '0 ₹',
-                description: 'Basic interview practice',
-                features: [
-                  '3 mock interviews per month',
-                  'Basic feedback',
-                  'Limited question bank',
-                  'Text-based interviews',
-                  'Resume templates',
-                ],
-                buttonText: 'Already Using Free',
-                highlighted: false
-              },
-              {
-                title: 'Pro',
-                price: '150 ₹',
-                period: '/month',
-                description: 'For serious job seekers',
-                features: [
-                  'Unlimited mock interviews',
-                  'Detailed feedback',
-                  'Interview with Industry Experts',
-                  'Priority Email support',
-                  'Resume templates'
-                ],
-                buttonText: 'Get Pro',
-                highlighted: true
-              },
-              {
-                title: 'Teams',
-                price: '500 ₹',
-                period: '/month',
-                description: 'For career coaches & teams',
-                features: [
-                  'Everything in Pro',
-                  'Up to 5 team members',
-                  'Progress tracking',
-                  'Custom question sets',
-                  'Resume Guidence',
-                ],
-                buttonText: 'Contact Sales',
-                highlighted: false
-              }
-            ].map((plan, index) => (
-
-
-              <div
-                key={index}
-                className={`rounded-xl font-montserrat shadow-md p-8 md:hover:scale-105 transition-transform duration-300 ${plan.highlighted
-                  ? 'bg-gradient-to-b from-indigo-600 to-indigo-700 text-white shadow-lg '
-                  : 'bg-gray-50 border border-gray-200'
-                  }`}
-              >
-
-                <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
-                <div className="flex items-baseline mb-4">
-                  <span className="text-3xl font-bold">{plan.price}</span>
-                  {plan.period && <span className={plan.highlighted ? 'text-indigo-100' : 'text-gray-500'}>{plan.period}</span>}
-                </div>
-                <p className={`mb-6 ${plan.highlighted ? 'text-indigo-100' : 'text-gray-600'}`}>{plan.description}</p>
-
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="flex items-start">
-                      <CheckCircle className={`h-5 w-5 mr-2 mt-1 flex-shrink-0 ${plan.highlighted ? 'text-indigo-200' : 'text-green-500'
-                        }`} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <button onClick={() => { alertdo() }} className={`w-full py-3 rounded-lg font-medium ${plan.highlighted
-                  ? 'bg-white text-indigo-600 hover:bg-gray-100'
-                  : 'bg-indigo-600 text-white hover:bg-indigo-700'
-                  }`}>
-                  {plan.buttonText}
-                </button>
-
-                <button
-                  onClick={initiatePayment}
-                  disabled={loading}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-                >
-                  {loading ? "Processing..." : "Pay with Razorpay"}
-                </button>
-
-              </div>
-
-
-            ))} */}
 
             <div
               className='rounded-xl font-montserrat shadow-md p-8 md:hover:scale-105 transition-transform duration-300 bg-gray-50 border border-gray-200'
@@ -190,18 +95,11 @@ function Upgrade() {
               <h3 className="text-2xl font-bold mb-2">Free</h3>
               <div className="flex items-baseline mb-4">
                 <span className="text-3xl font-bold">0 ₹</span>
-                {/* {plan.period && <span className={plan.highlighted ? 'text-indigo-100' : 'text-gray-500'}>{plan.period}</span>} */}
               </div>
               <p className='mb-6 text-gray-600'>Basic interview practice</p>
 
               <ul className="space-y-4 mb-8">
-                {/* {plan.features.map((feature, fIndex) => (
-                  <li key={fIndex} className="flex items-start">
-                    <CheckCircle className={`h-5 w-5 mr-2 mt-1 flex-shrink-0 ${plan.highlighted ? 'text-indigo-200' : 'text-green-500'
-                      }`} />
-                    <span>{feature}</span>
-                  </li>
-                ))} */}
+               
                 <li className="flex items-start">
                   <CheckCircle className='h-5 w-5 mr-2 mt-1 flex-shrink-0 text-green-500' />
                   <span>3 mock interviews per month</span>
@@ -225,13 +123,6 @@ function Upgrade() {
                 Already Using Free
               </button>
 
-              {/* <button
-                onClick={initiatePayment}
-                disabled={loading}
-                className="w-full py-3 rounded-lg font-medium bg-indigo-600 text-white hover:bg-indigo-700 "
-              >
-                {loading ? "Processing..." : "Pay with Razorpay"}
-              </button> */}
 
             </div>
 
@@ -267,9 +158,6 @@ function Upgrade() {
 
               </ul>
 
-              {/* <button onClick={() => { alertdo() }} className='w-full py-3 rounded-lg font-medium bg-white text-indigo-600 hover:bg-gray-100 '>
-                Already Using Free
-              </button> */}
 
               <button
                 onClick={initiatePayment}
@@ -332,26 +220,5 @@ function Upgrade() {
   )
 }
 
-
-
-// "use client";
-
-// import { useState } from "react";
-
-// export default function Upgrade() {
-
-
-//   return (
-//     <div>
-//       <button
-//         onClick={initiatePayment}
-//         disabled={loading}
-//         className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-//       >
-//         {loading ? "Processing..." : "Pay with Razorpay"}
-//       </button>
-//     </div>
-//   );
-// }
 
 export default Upgrade
