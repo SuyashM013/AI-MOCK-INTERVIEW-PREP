@@ -90,7 +90,7 @@ function Upgrade() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
+            {/* {[
               {
                 title: 'Free',
                 price: '0 ₹',
@@ -181,7 +181,7 @@ function Upgrade() {
               </div>
 
 
-            ))}
+            ))} */}
 
             <div
               className='rounded-xl font-montserrat shadow-md p-8 md:hover:scale-105 transition-transform duration-300 bg-gray-50 border border-gray-200'
@@ -195,29 +195,128 @@ function Upgrade() {
               <p className='mb-6 text-gray-600'>Basic interview practice</p>
 
               <ul className="space-y-4 mb-8">
-                {plan.features.map((feature, fIndex) => (
+                {/* {plan.features.map((feature, fIndex) => (
                   <li key={fIndex} className="flex items-start">
                     <CheckCircle className={`h-5 w-5 mr-2 mt-1 flex-shrink-0 ${plan.highlighted ? 'text-indigo-200' : 'text-green-500'
                       }`} />
                     <span>{feature}</span>
                   </li>
-                ))}
+                ))} */}
+                <li className="flex items-start">
+                  <CheckCircle className='h-5 w-5 mr-2 mt-1 flex-shrink-0 text-green-500' />
+                  <span>3 mock interviews per month</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className='h-5 w-5 mr-2 mt-1 flex-shrink-0 text-green-500' />
+                  <span>Basic feedback</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className='h-5 w-5 mr-2 mt-1 flex-shrink-0 text-green-500' />
+                  <span>Limited question bank</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className='h-5 w-5 mr-2 mt-1 flex-shrink-0 text-green-500' />
+                  <span>Resume templates</span>
+                </li>
+
               </ul>
 
-              <button onClick={() => { alertdo() }} className={`w-full py-3 rounded-lg font-medium ${plan.highlighted
-                ? 'bg-white text-indigo-600 hover:bg-gray-100'
-                : 'bg-indigo-600 text-white hover:bg-indigo-700'
-                }`}>
-                {plan.buttonText}
+              <button onClick={() => { alertdo() }} className='w-full py-3 rounded-lg font-medium bg-indigo-600 text-white hover:bg-indigo-700 '>
+                Already Using Free
               </button>
+
+              {/* <button
+                onClick={initiatePayment}
+                disabled={loading}
+                className="w-full py-3 rounded-lg font-medium bg-indigo-600 text-white hover:bg-indigo-700 "
+              >
+                {loading ? "Processing..." : "Pay with Razorpay"}
+              </button> */}
+
+            </div>
+
+            <div
+              className='rounded-xl font-montserrat shadow-md p-8 md:hover:scale-105 transition-transform duration-300 bg-gradient-to-b from-indigo-600 to-indigo-700 text-white hover:shadow-lg'
+            >
+
+              <h3 className="text-2xl font-bold mb-2">Pro</h3>
+              <div className="flex items-baseline mb-4">
+                <span className="text-3xl font-bold">120 ₹</span>
+                 <span className='text-indigo-100'>/month</span>
+              </div>
+              <p className='mb-6 text-indigo-100'>For serious job seekers</p>
+
+              <ul className="space-y-4 mb-8">
+                
+                <li className="flex items-start">
+                  <CheckCircle className='h-5 w-5 mr-2 mt-1 flex-shrink-0 text-indigo-200' />
+                  <span>Unlimited mock interviews</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className='h-5 w-5 mr-2 mt-1 flex-shrink-0 text-indigo-200' />
+                  <span>Interview with Industry Experts</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className='h-5 w-5 mr-2 mt-1 flex-shrink-0 text-indigo-200' />
+                  <span>Priority Email support</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className='h-5 w-5 mr-2 mt-1 flex-shrink-0 text-indigo-200' />
+                  <span>Resume templates</span>
+                </li>
+
+              </ul>
+
+              {/* <button onClick={() => { alertdo() }} className='w-full py-3 rounded-lg font-medium bg-white text-indigo-600 hover:bg-gray-100 '>
+                Already Using Free
+              </button> */}
 
               <button
                 onClick={initiatePayment}
                 disabled={loading}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                className="w-full py-3 rounded-lg font-medium bg-white text-indigo-600 hover:bg-gray-100 "
               >
                 {loading ? "Processing..." : "Pay with Razorpay"}
               </button>
+
+            </div>
+
+            <div
+              className='rounded-xl font-montserrat shadow-md p-8 md:hover:scale-105 transition-transform duration-300 bg-gray-50 border border-gray-200'
+            >
+
+              <h3 className="text-2xl font-bold mb-2">Teams</h3>
+              <div className="flex items-baseline mb-4">
+                <span className="text-3xl font-bold">500 ₹</span>
+                <span className='text-indigo-100'>/month</span>
+              </div>
+              <p className='mb-6 text-gray-600'>For career coaches & teams</p>
+
+              <ul className="space-y-4 mb-8">
+                
+                <li className="flex items-start">
+                  <CheckCircle className='h-5 w-5 mr-2 mt-1 flex-shrink-0 text-green-500' />
+                  <span>Everything in Pro</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className='h-5 w-5 mr-2 mt-1 flex-shrink-0 text-green-500' />
+                  <span>Up to 5 team members</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className='h-5 w-5 mr-2 mt-1 flex-shrink-0 text-green-500' />
+                  <span>Progress tracking</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className='h-5 w-5 mr-2 mt-1 flex-shrink-0 text-green-500' />
+                  <span>Resume Guidence</span>
+                </li>
+
+              </ul>
+
+              <button onClick={() => { alertdo() }} className='w-full py-3 rounded-lg font-medium bg-indigo-600 text-white hover:bg-indigo-700 '>
+                Contact Sales
+              </button>
+
 
             </div>
 
