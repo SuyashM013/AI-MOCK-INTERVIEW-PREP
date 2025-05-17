@@ -6,15 +6,8 @@ export async function GET(req) {
 
   await connectDB();
 
-  const url = new URL(req.url, `http://${req.headers.get('host')}`);
-  const email = url.searchParams.get("email");
-
-  if (!email) {
-    return NextResponse.json({ error: "Missing email" }, { status: 400 });
-  }
-
   try {
-    const result = await userModel.find({ createdBy: email  });
+    const result = await userModel.find({ createdBy: 'Test@gmail.com' });
     // console.log(result)
     
     return NextResponse.json(result);

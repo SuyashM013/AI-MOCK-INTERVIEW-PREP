@@ -6,7 +6,6 @@ import {
 import { neobrutalism } from '@clerk/themes'
 import { Toaster } from "@/components/ui/toaster";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
