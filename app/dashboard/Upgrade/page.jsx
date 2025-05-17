@@ -18,6 +18,17 @@ function Upgrade() {
     })
 
   }
+  const alertdo2 = () => {
+  
+    Swal.fire({
+      position: "top",
+      title: "Comming Soon",
+      timer: 1000,
+      timerProgressBar: true,
+    })
+
+  }
+
 
 
   const [loading, setLoading] = useState(false);
@@ -120,7 +131,7 @@ function Upgrade() {
               </ul>
 
               <button onClick={() => { alertdo() }} className='w-full py-3 rounded-lg font-medium bg-indigo-600 text-white hover:bg-indigo-700 '>
-                Already Using Free
+                Pay Now
               </button>
 
 
@@ -132,7 +143,7 @@ function Upgrade() {
 
               <h3 className="text-2xl font-bold mb-2">Pro</h3>
               <div className="flex items-baseline mb-4">
-                <span className="text-3xl font-bold">120 ₹</span>
+                <span className="text-3xl font-bold"> ₹ 120</span>
                  <span className='text-indigo-100'>/month</span>
               </div>
               <p className='mb-6 text-indigo-100'>For serious job seekers</p>
@@ -164,7 +175,7 @@ function Upgrade() {
                 disabled={loading}
                 className="w-full py-3 rounded-lg font-medium bg-white text-indigo-600 hover:bg-gray-100 "
               >
-                {loading ? "Processing..." : "Pay with Razorpay"}
+                {loading ? "Processing..." : "Pay Now"}
               </button>
 
             </div>
@@ -175,7 +186,7 @@ function Upgrade() {
 
               <h3 className="text-2xl font-bold mb-2">Teams</h3>
               <div className="flex items-baseline mb-4">
-                <span className="text-3xl font-bold">500 ₹</span>
+                <span className="text-3xl font-bold">₹ 500 </span>
                 <span className='text-indigo-100'>/month</span>
               </div>
               <p className='mb-6 text-gray-600'>For career coaches & teams</p>
@@ -201,8 +212,8 @@ function Upgrade() {
 
               </ul>
 
-              <button onClick={() => { alertdo() }} className='w-full py-3 rounded-lg font-medium bg-indigo-600 text-white hover:bg-indigo-700 '>
-                Contact Sales
+              <button onClick={() => {   alertdo2() }} className='w-full py-3 rounded-lg font-medium bg-indigo-600 text-white hover:bg-indigo-700 '>
+               Pay Now
               </button>
 
 
