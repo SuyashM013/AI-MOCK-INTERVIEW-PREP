@@ -42,25 +42,23 @@ const BoxGallery = () => {
       id: 6,
       title: "Modern CV",
       description: "A clean and modern CV template with sleek design.", 
-      imageUrl: "/Resumes/resume2.jpg",
-      fileUrl: "/resumes/resume2.docx",
+      imageUrl: "/Minor/resume2.jpg",
+      fileUrl: "/Minor/resume2.docx",
     },
     {
       id: 7,
       title: "Modern CV",
       description: "A clean and modern CV template with sleek design.",
-      imageUrl: "/Resumes/resume3.jpg",
-      fileUrl: "/resumes/resume3.docx",
+      imageUrl: "/Minor/resume3.jpg",
+      fileUrl: "/Minor/resume3.docx",
     },
     {
       id: 8,
       title: "Modern CV",
       description: "A clean and modern CV template with sleek design.",
-      imageUrl: "/Resumes/resume11.jpg",
-      fileUrl: "/resumes/resume11.docx",
+      imageUrl: "/Minor/resume11.jpg",
+      fileUrl: "/Minor/resume11.docx",
     },
-    
-
   ];
 
   return (
