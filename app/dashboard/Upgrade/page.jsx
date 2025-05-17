@@ -213,7 +213,7 @@ function Upgrade() {
               </ul>
 
               <button onClick={() => {   alertdo2() }} className='w-full py-3 rounded-lg font-medium bg-indigo-600 text-white hover:bg-indigo-700 '>
-               Pay Now
+               Comming Soon
               </button>
 
 
