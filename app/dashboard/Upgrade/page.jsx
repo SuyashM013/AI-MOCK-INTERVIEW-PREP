@@ -187,7 +187,7 @@ function Upgrade() {
               <h3 className="text-2xl font-bold mb-2">Teams</h3>
               <div className="flex items-baseline mb-4">
                 <span className="text-3xl font-bold">₹ 500 </span>
-                <span className='text-indigo-100'>/month</span>
+                <span className='text-gray-500'>/month</span>
               </div>
               <p className='mb-6 text-gray-600'>For career coaches & teams</p>
 

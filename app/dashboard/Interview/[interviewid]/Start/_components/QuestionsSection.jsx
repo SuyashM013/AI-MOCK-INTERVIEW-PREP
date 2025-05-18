@@ -6,7 +6,7 @@ function QuestionsSection({ MockInterviewQuestion, activeQuestion }) {
     const textToSpeech = (text) =>{
         if ('speechSynthesis' in window) {
             const utterance = new SpeechSynthesisUtterance(text);
-            utterance.voice = window.speechSynthesis.getVoices()[11];
+            utterance.voice = window.speechSynthesis.getVoices()[1];
             window.speechSynthesis.speak(utterance);
         }
         else{

@@ -2,7 +2,7 @@
 
 import Webcam from "react-webcam";
 import React, { useEffect, useState } from 'react'
-import { Lightbulb, WebcamIcon } from "lucide-react";
+import { Lightbulb, Loader, WebcamIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -44,7 +44,10 @@ function Interview({ params }) {
 
 
   if (error) return <div className="text-red-500">Error: {error}</div>;
-  if (!interviewData) return <div>Loading...</div>;
+  if (!interviewData) return <div className="w-full h-screen flex items-center justify-center text-4xl gap-4 ">
+    <Loader className="animate-spin" width={50} height={50} />
+    Loading...
+    </div>;
 
 
   return (
@@ -77,7 +80,7 @@ function Interview({ params }) {
           {webCamon ? <Webcam
             onUserMedia={() => webCamon(true)}
             mirrored={true}
-            style={{ width: 300, height: 300 }}
+            style={{ width: 500, height: 500 }}
           />
             :
             <>
