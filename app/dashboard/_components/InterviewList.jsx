@@ -17,7 +17,7 @@ function InterviewList() {
         GetInterviewList();
         setTimeout(() => {
             setLoading(false); // After loading is complete
-        }, 2000);
+        }, 5000);
     }, [user])
 
     const GetInterviewList = async () => {
