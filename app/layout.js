@@ -6,6 +6,7 @@ import {
 import { neobrutalism } from '@clerk/themes'
 import { Toaster } from "@/components/ui/toaster";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -32,6 +33,8 @@ export default function RootLayout({ children }) {
       }}>
       <html lang="en">
         <head>
+          <link rel="icon" href="/logo.svg" sizes="any" />
+          
           <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossOrigin="anonymous" referrerPolicy="no-referrer"></script>
