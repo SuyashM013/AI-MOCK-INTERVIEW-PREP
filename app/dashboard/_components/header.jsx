@@ -1,5 +1,5 @@
 'use client'
-import {  useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,9 +10,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const path = usePathname();
 
-  
   return (
-    
+
     <nav className="bg-primary/20 mx-5 my-5 rounded-3xl  md:rounded-full md:mx-20 lg:mx-36 shadow-md">
       <div className="max-w-6xl mx-auto px-5">
         <div className="flex justify-between items-center h-16">
@@ -21,14 +20,14 @@ const Header = () => {
           <div className="flex flex-shrink-0 gap-3 items-center">
             <span>
               <Image
-              src="/logo.svg"
-              alt="Logo"
-              width={30}
-              height={40}
-              className="cursor-pointer"
-            />
+                src="/logo.svg"
+                alt="Logo"
+                width={30}
+                height={40}
+                className="cursor-pointer"
+              />
 
-              </span>
+            </span>
             <span className='font-bold text-md'>  AI Interviewer </span>
 
           </div>
@@ -41,14 +40,14 @@ const Header = () => {
               ${path == '/dashboard' && 'text-primary'}`}
             >Dashboard</Link>
 
-            {/* <Link href="/dashboard/questions" className={` hover:text-primary */}
-              {/* ${path == '/dashboard/questions' && 'text-primary font-bold'}`}>Questions</Link> */}
-
             <Link href="/dashboard/Upgrade" className={` hover:text-primary
               ${path == '/dashboard/Upgrade' && 'text-primary '}`}>Upgrade</Link>
 
             <Link href="/dashboard/Resume" className={` hover:text-primary
               ${path == '/Resume' && 'text-primary '}`}>Resume</Link>
+
+            <Link href="/dashboard/Contact" className={` hover:text-primary
+              ${path == '/Contact' && 'text-primary '}`}>Contact</Link>
 
           </div>
 
@@ -74,7 +73,6 @@ const Header = () => {
         </div>
 
 
-
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden font-chau text-lg ">
@@ -86,14 +84,6 @@ const Header = () => {
               >
                 Dashboard
               </Link>
-
-              {/* <Link
-                href="/dashboard/questions"
-                className={`block px-3 py-2   hover:text-primary  rounded-md
-                  ${path == '/dashboard/questions' && 'text-primary font-bold'}`}
-              >
-                Questions
-              </Link> */}
 
               <Link
                 href="/dashboard/Upgrade"
@@ -109,6 +99,10 @@ const Header = () => {
               >
                 Resume
               </Link>
+
+              <Link href="/dashboard/Contact" className={`block px-3 py-2   hover:text-primary  rounded-md
+              ${path == '/Contact' && 'text-primary '}`}>Contact</Link>
+
             </div>
           </div>
         )}

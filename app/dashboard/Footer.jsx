@@ -101,7 +101,7 @@ function Footer() {
                         <h4 className="text-white text-2xl font-bebas mb-4">Company</h4>
                         <ul className="space-y-2 font-montserrat">
                             <li><Link href="/" className="hover:text-white">About Us</Link></li>
-                            <li><Link href="/" className="hover:text-white">Contact</Link></li>
+                            <li><Link href="/dashboard/Contact" className="hover:text-white">Contact</Link></li>
                             
                             <li><Link href="/./PrivacyPolicy" className="hover:text-white">Privacy Policy</Link></li>
                             <li><Link href="/./TermsofService" className="hover:text-white">Terms of Service</Link></li>
