@@ -28,7 +28,7 @@ const Header = () => {
               />
 
             </span>
-            <span className='font-bold text-md'>  AI Interviewer </span>
+            <span className='text-2xl font-bebas '>  AI Interviewer </span>
 
           </div>
 
