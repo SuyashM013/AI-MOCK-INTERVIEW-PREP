@@ -34,7 +34,7 @@ function InterviewList() {
 
             const pre_data = await pre_res.json();
 
-            console.log("Pre Interviews:", pre_data);
+            // console.log("Pre Interviews:", pre_data);
             setPreInterview(pre_data);
 
 
