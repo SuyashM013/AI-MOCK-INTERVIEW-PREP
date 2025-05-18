@@ -44,10 +44,10 @@ const Header = () => {
               ${path == '/dashboard/Upgrade' && 'text-primary '}`}>Upgrade</Link>
 
             <Link href="/dashboard/Resume" className={` hover:text-primary
-              ${path == '/Resume' && 'text-primary '}`}>Resume</Link>
+              ${path == '/dashboard/Resume' && 'text-primary '}`}>Resume</Link>
 
             <Link href="/dashboard/Contact" className={` hover:text-primary
-              ${path == '/Contact' && 'text-primary '}`}>Contact</Link>
+              ${path == '/dashboard/Contact' && 'text-primary '}`}>Contact</Link>
 
           </div>
 
@@ -95,13 +95,13 @@ const Header = () => {
               <Link
                 href="/dashboard/Resume"
                 className={`block px-3 py-2   hover:text-primary  rounded-md
-                  ${path == '/Resume' && 'text-primary '}`}
+                  ${path == '/dashboard/Resume' && 'text-primary '}`}
               >
                 Resume
               </Link>
 
               <Link href="/dashboard/Contact" className={`block px-3 py-2   hover:text-primary  rounded-md
-              ${path == '/Contact' && 'text-primary '}`}>Contact</Link>
+              ${path == '/dashboard/Contact' && 'text-primary '}`}>Contact</Link>
 
             </div>
           </div>
