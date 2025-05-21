@@ -12,9 +12,9 @@ const Header = () => {
 
   return (
 
-    <nav className="bg-primary/20 mx-5 my-5 rounded-3xl  md:rounded-full md:mx-20 lg:mx-36 shadow-md">
+    <nav className="bg-primary/10 mx-5 my-5 rounded-3xl  md:rounded-full md:mx-20 lg:mx-36 shadow-md ">
       <div className="max-w-6xl mx-auto px-5">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between h-14 items-center ">
 
           {/* Logo */}
           <div className="flex flex-shrink-0 gap-3 items-center">
