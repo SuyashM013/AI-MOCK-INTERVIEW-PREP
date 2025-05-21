@@ -18,8 +18,6 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
     const { toast } = useToast()
 
     const {
-        error,
-        interimResult,
         isRecording,
         results,
         setResults,
@@ -41,7 +39,7 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
 
         if (isRecording) {
             stopSpeechToText();
-        
+
         }
         else {
             startSpeechToText();
@@ -49,20 +47,20 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
     }
 
     useEffect(() => {
-        if (!isRecording && userAnswer.length>10) {
+        if (!isRecording && userAnswer.length > 10) {
             UpdateUserAnswer();
         }
-    }, [userAnswer])  
+    }, [userAnswer])
 
 
     const UpdateUserAnswer = async () => {
         try {
             setLoading(true);
-    
+
             const feedbackPrompt = "Question " + MockInterviewQuestion[activeQuestion]?.question +
                 ", User Answer " + userAnswer +
                 ". Depends on question and user answer for the given question. Please give us rating for answer and feedback as area of improvement in answer in just 3 to 5 lines to improve it in JSON formate with rating field and feedback field.";
-    
+
             const fedResult = await chatSession.sendMessage(feedbackPrompt);
             const mockJsonResp = fedResult.response.text().replace('```json', '').replace('```', '');
             const JsonFeedbackResp = JSON.parse(mockJsonResp);
@@ -71,13 +69,13 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
             //     mockId: MockInterviewQuestion.interviewData,
             //     corrAns: MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.answer,
             //     userAnswer: userAnswer,
-            //         question: MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.question,
-            //         rating: JsonFeedbackResp.rating,
-            //         feedback: JsonFeedbackResp.feedback,
-            //         userEmail: user.primaryEmailAddress?.emailAddress,
-            //         createdAt: new Date().toISOString(),
+            //     question: MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.question,
+            //     rating: JsonFeedbackResp.rating,
+            //     feedback: JsonFeedbackResp.feedback,
+            //     email: user.primaryEmailAddress?.emailAddress,
+            //     createdAt: new Date().toISOString(),
             // })
-    
+
             const payload = {
                 mockId: MockInterviewQuestion.interviewData,
                 question: MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.question,
@@ -85,10 +83,10 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
                 userAnswer: userAnswer,
                 rating: JsonFeedbackResp.rating,
                 feedback: JsonFeedbackResp.feedback,
-                userEmail: user.primaryEmailAddress?.emailAddress,
+                email: user.primaryEmailAddress?.emailAddress,
                 createdAt: new Date().toISOString(),
             };
-    
+
             const response = await fetch('/api/user-answer', {
                 method: 'POST',
                 headers: {
@@ -98,7 +96,7 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
             });
 
             const data = await response.json();
-    
+
             if (response.ok) {
                 toast({
                     title: "Answer saved",
@@ -117,8 +115,8 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
             setLoading(false);
         }
     };
-    
-    return MockInterviewQuestion &&  (
+
+    return MockInterviewQuestion && (
         <div className='flex flex-col justify-center items-center'>
 
             <div className='flex flex-col justify-center items-center bg-black rounded-lg border p-5 mt-20 '>
@@ -145,9 +143,11 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
                 </h2> : <h2 className='flex gap-2 items-center text-blue-700 '> <Mic /> Record Answer </h2>}
             </Button>
 
-            {/* <Button onClick={() => { console.log(userAnswer) }} >
-                Show Answer
-            </Button> */}
+            {/* <div className='flex  p-5 flex-col justify-center items-center text-sm '>
+                {userAnswer}
+            </div> */}
+
+            
         </div>
     )
 }

@@ -7,7 +7,7 @@ export async function POST(req) {
         // console.log("Connecting to DB...");
         await connectDB();
         const body = await req.json();
-        // console.log("Received body:", body);
+        console.log("Received body:", body);
 
         const {
             mockId,
@@ -16,7 +16,7 @@ export async function POST(req) {
             userAnswer,
             rating,
             feedback,
-            userEmail,
+            email,
             createdAt,
         } = body;
 
@@ -27,7 +27,7 @@ export async function POST(req) {
             userAnswer,
             rating,
             feedback,
-            userEmail,
+            email,
             createdAt,
         });
 
@@ -37,7 +37,7 @@ export async function POST(req) {
 
 
     catch (err) {
-        // console.log('API Error Saving user answer into DB', err);
+        console.log('API Error Saving user answer into DB', err);
         return new Response(JSON.stringify({ message: 'Server Error' }), {
             status: 500,
         })
