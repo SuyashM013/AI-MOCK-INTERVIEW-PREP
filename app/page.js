@@ -455,9 +455,9 @@ export default function HomePage() {
 
           <div className="text-center mt-12">
             <p className="text-gray-600">Still have questions?</p>
-            <Link href="/contact" className="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-700 mt-2">
+            <p className="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-700 mt-2">
               Ask From Below<ArrowDown className="ml-2 h-4 w-4" />
-            </Link>
+            </p>
           </div>
         </div>
       </section>
