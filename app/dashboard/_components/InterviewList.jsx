@@ -62,7 +62,6 @@ function InterviewList() {
                         return <InterviewCard interview={interview} key={index} />
 
                     })}
-
                 </div>
 
             </div>
