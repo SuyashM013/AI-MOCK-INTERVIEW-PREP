@@ -1,8 +1,5 @@
 "use client"
 
-// CLAUDE
-// pages/index.js
-// pages/index.js
 import React, { useState } from 'react';
 import Link from 'next/link';
 
@@ -32,6 +29,9 @@ import res2 from '@/public/Minor/res-2.png';
 import res3 from '@/public/Minor/res-3.png';
 import res4 from '@/public/Minor/res-4.png';
 import mainp from '@/public/Other/Int-1.png';
+// import {tut} from '@/public/Other/Minor_rec.mp4';
+// import tut from '@/public/Other/Minor_rec.mp4';app/page.js public/Other/Minor_rec.mp4
+
 import { useRouter } from 'next/navigation';
 
 import Swal from 'sweetalert2'
@@ -148,12 +148,12 @@ export default function HomePage() {
                 <Link href="/dashboard" className="px-6 py-3 bg-white text-indigo-700 rounded-lg font-medium hover:bg-gray-100 flex items-center">
                   Start Practicing <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-                <button
+                {/* <button
                   onClick={() => setShowVideoModal(true)}
                   className="px-6 py-3 border border-white text-white rounded-lg font-medium hover:bg-indigo-600 flex items-center"
                 >
                   Watch Demo <Video className="ml-2 h-5 w-5" />
-                </button>
+                </button> */}
               </div>
             </div>
             <div className="hidden md:block">
@@ -164,7 +164,7 @@ export default function HomePage() {
       </section>
 
       {/* Video Modal */}
-      {showVideoModal && (
+      {/* {showVideoModal && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
           <div className="bg-indigo-600 rounded-lg shadow-lg max-w-4xl w-full">
             <div className="flex justify-between items-center p-4 border-b">
@@ -180,16 +180,21 @@ export default function HomePage() {
               <div className="aspect-w-16 aspect-h-9 bg-gray-100 rounded">
                 <div className="flex items-center justify-center h-full">
                   {/* Replace with actual video embed */}
-                  <div className="text-center">
-                    <Video className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-500">Demo video player would appear here</p>
+                  {/* <div className="text-center"> */}
+                    {/* <Video className="h-16 w-16 text-gray-400 mx-auto mb-4" >
+                      <source src={mainp} />
+                    </Video>
+                    <p className="text-gray-500">Demo video player would appear here</p> */}
+                    {/* <video autoPlay loop style={{ width: '500px', height: '500px' }}>
+                      <source src="../public/Other/Minor_rec.mp4" type="video/mp4" />
+                    </video>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Resume Templates Feature Showcase */}
       <section className="py-20 bg-white" id="resume-feature">
