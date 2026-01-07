@@ -18,6 +18,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { chatSession } from '@/utils/GeminiAiModel';
+import { GeminiAiModel } from '@/utils/GeminiAiModel';
 
 function AddnewInterview() {
 
@@ -42,7 +43,9 @@ function AddnewInterview() {
 
         const MockJsonResp = (result.response.text().replace('```json', '').replace('```', ''))
 
-        // console.log(JSON.parse(MockJsonResp));
+        // const MockJsonResp = await GeminiAiModel(inpPrompt);
+
+        console.log(JSON.parse(MockJsonResp));
         setJsonResp(MockJsonResp)
 
         if (MockJsonResp) {

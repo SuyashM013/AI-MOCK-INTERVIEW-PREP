@@ -627,7 +627,7 @@ export default function HomePage() {
 
           <div className="border-t font-montserrat border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="mt-4 md:mt-0">
-              <h3>Made with ❤️ by Syntax Error</h3>
+             <h3>Made with ❤️ by <Link className="hover:text-white cursor-pointer" target='new' href="https://github.com/SuyashM013">Suyash Mishra</Link> </h3>
             </div>
             <div className='mt-4 md:mt-0'>
               <p>&copy; {new Date().getFullYear()} InterviewAI. All rights reserved.</p>
