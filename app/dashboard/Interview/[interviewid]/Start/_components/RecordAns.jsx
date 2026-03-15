@@ -6,8 +6,10 @@ import React, { useEffect, useState } from 'react'
 import Webcam from 'react-webcam'
 import useSpeechToText from 'react-hook-speech-to-text';
 import { useToast } from "@/hooks/use-toast"
-import { chatSession } from '@/utils/GeminiAiModel';
+
 import { useUser } from '@clerk/nextjs';
+
+import { getGeminiResponse } from '@/utils/GeminiAiModel';
 
 
 function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
@@ -61,20 +63,26 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
                 ", User Answer " + userAnswer +
                 ". Depends on question and user answer for the given question. Please give us rating for answer and feedback as area of improvement in answer in just 3 to 5 lines to improve it in JSON formate with rating field and feedback field.";
 
-            const fedResult = await chatSession.sendMessage(feedbackPrompt);
-            const mockJsonResp = fedResult.response.text().replace('```json', '').replace('```', '');
+            // const fedResult = await chatSession.sendMessage(feedbackPrompt);
+
+            const fedResult = await getGeminiResponse(feedbackPrompt);
+            const mockJsonResp = fedResult.replace('```json', '').replace('```', '');
+
+            console.log("Feedback Prompt: ", feedbackPrompt);
+            console.log("Gemini Feedback Response: ", fedResult);
+
             const JsonFeedbackResp = JSON.parse(mockJsonResp);
 
-            // console.log({
-            //     mockId: MockInterviewQuestion.interviewData,
-            //     corrAns: MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.answer,
-            //     userAnswer: userAnswer,
-            //     question: MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.question,
-            //     rating: JsonFeedbackResp.rating,
-            //     feedback: JsonFeedbackResp.feedback,
-            //     email: user.primaryEmailAddress?.emailAddress,
-            //     createdAt: new Date().toISOString(),
-            // })
+            console.log({
+                mockId: MockInterviewQuestion.interviewData,
+                corrAns: MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.answer,
+                userAnswer: userAnswer,
+                question: MockInterviewQuestion?.MockInterviewQuestion?.[MockInterviewQuestion?.activeQuestion]?.question,
+                rating: JsonFeedbackResp.rating,
+                feedback: JsonFeedbackResp.feedback,
+                email: user.primaryEmailAddress?.emailAddress,
+                createdAt: new Date().toISOString(),
+            })
 
             const payload = {
                 mockId: MockInterviewQuestion.interviewData,
@@ -143,9 +151,9 @@ function RecordAns(MockInterviewQuestion, activeQuestion, interviewData) {
                 </h2> : <h2 className='flex gap-2 items-center text-blue-700 '> <Mic /> Record Answer </h2>}
             </Button>
 
-            {/* <div className='flex  p-5 flex-col justify-center items-center text-sm '>
+            <div className='flex  p-5 flex-col justify-center items-center text-sm '>
                 {userAnswer}
-            </div> */}
+            </div>
 
             
         </div>
