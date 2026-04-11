@@ -17,8 +17,8 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { chatSession } from '@/utils/GeminiAiModel';
-import { GeminiAiModel } from '@/utils/GeminiAiModel';
+
+import { getGeminiResponse } from '@/utils/GeminiAiModel';
 
 function AddnewInterview() {
 
@@ -37,15 +37,17 @@ function AddnewInterview() {
         e.preventDefault();
         console.log(jobPosition, jobDesc, jobExp);
 
-        const inpPrompt = "Job Position" + jobPosition + "Job Description" + jobDesc + "Job Experience" + jobExp + ". Based on the details provided craft 5 interview questions and answers in json format. the question and answer should be in json format.";
+        const inpPrompt = "Job Position" + jobPosition + "Job Description" + jobDesc + "Job Experience" + jobExp + ". Based on the details provided craft 5 interview questions and answers in json format. the question and answer should be in json format and do not add explanation text and no other text in the output only questions and answer. ";
 
-        const result = await chatSession.sendMessage(inpPrompt);
+       
+        const result = await getGeminiResponse(inpPrompt);
 
-        const MockJsonResp = (result.response.text().replace('```json', '').replace('```', ''))
+        // console.log("Gemini Raw Response: ", result);
 
-        // const MockJsonResp = await GeminiAiModel(inpPrompt);
+        const MockJsonResp = (result.replace('```json', '').replace('```', ''))
 
-        console.log(JSON.parse(MockJsonResp));
+
+        // console.log(JSON.parse(MockJsonResp));
         setJsonResp(MockJsonResp)
 
         if (MockJsonResp) {
@@ -78,9 +80,9 @@ function AddnewInterview() {
                 return;
             }
 
-            // if (data.success) {
-            //     // console.log('Inserted Id: ', data.mockId);
-            // }
+            if (data.success) {
+                console.log('Inserted Id: ', data.mockId);
+            }
             else {
                 console.log('Error: ', data.error);
             }

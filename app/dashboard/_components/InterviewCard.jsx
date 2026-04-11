@@ -7,15 +7,17 @@ function InterviewCard({ interview }) {
     const router = useRouter();
 
     const onStart = () => {
-        router.push('/dashboard/Interview/'+interview?.mockId)
+        router.push('/dashboard/Interview/' + interview?.mockId)
     }
 
     const onFeedback = () => {
-        router.push('/dashboard/Interview/'+interview?.mockId+'/feedback')
+        router.push('/dashboard/Interview/' + interview?.mockId + '/feedback')
     }
 
+
     return (
-        <div className='border border-blue-200 hover:shadow-md bg-blue-50 shadow-sm rounded-lg p-3'>
+
+        <div className=''>
 
             <h2 className='font-bebas text-3xl  text-primary uppercase'> {interview.jobPosition}</h2>
             <h2 className='text-sm font-montserrat text-gray-600'>{interview.jobExperience} Years of Experience</h2>
@@ -25,8 +27,11 @@ function InterviewCard({ interview }) {
 
                 <Button onClick={onFeedback} variant='outline' className='w-full font-chau'>Feedback</Button>
 
-                <Button onClick={onStart} className='w-full font-chau'>Start</Button>
+                <Button onClick={onStart} className='w-full 
+                font-chau'>Start</Button>
+
                 
+
             </div>
 
 

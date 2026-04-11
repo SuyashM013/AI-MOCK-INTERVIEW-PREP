@@ -1,8 +1,7 @@
 
 import * as mongoose from 'mongoose';
-const MONGO_URI = process.env.NEXT_PUBLIC_MONGO_URI;
 
-if (!MONGO_URI) {
+if (!process.env.NEXT_PUBLIC_MONGO_URI) {
     throw new Error("MONGO_URI not found in env");
 }
 
